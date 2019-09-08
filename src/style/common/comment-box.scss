@@ -1,0 +1,184 @@
+@import '../mixin.scss';
+
+.user-comments{
+    margin-bottom: 40px;
+
+    .comment-title{
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        line-height: 26px;
+        .sort{
+            font-size: $miniFontSize;
+            color: $lightFontColor;
+            a{
+                margin-left: 20px;
+            }
+            a.active{
+                color: $mainStyleColor3;
+            }
+        }
+    }
+
+    .comment-container{
+        margin-top: 8px;
+        border: $commonBorder;
+        border-radius: 4px;
+        padding:15px 20px 40px;
+        color: $lightFontColor;
+        background-color: $contentBgColor;
+
+        .tag-list{
+            .tag{
+                display: inline-block;
+                margin: {
+                    right: 10px;
+                    bottom: 10px;
+                }
+                padding: 0 10px;
+                border:  $commonBorder;
+                border-radius: 2px;
+                line-height: 34px;
+                cursor: pointer;
+                &.choose{
+                    border: 1px solid #{$mainStyleColor3};
+                    background-color: $mainStyleColor3;
+                    color:$whiteFontColor;
+                }
+            }
+        }
+
+        .img-only{
+            display: inline-block;
+            line-height: 20px;
+            margin-top: 22px;
+            font-size: $normalFontSize;
+            cursor: pointer;
+            .tick{
+                display: inline-block;
+                vertical-align: text-bottom;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                width: 15px;
+                height: 15px;
+
+                &.ticked{
+                    border-color: $mainStyleColor3;
+                    background: {
+                        image: url('/image/icons/tick.png');
+                    }
+                }
+            }
+        }
+
+        .common-list{
+
+            .comment-item{
+                display: flex;
+                padding-top: 30px;
+
+                .avatar-box{
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                    flex-shrink: 0;
+                    background: {
+                        image: url('/image/common/lazy-load-bg.png');
+                        size: 60% auto;
+                        position: center center;
+                        repeat: no-repeat;
+                        color: $commonBorderColor;
+                    }
+
+                    .avatar{
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .comment-box{
+                    padding-left: 20px;
+                    width: 828px;
+
+                    .user-name{
+                        margin-bottom: 4px;
+                        font-size: $largeFontSize;
+                        color: $darkerFontColor;
+                        line-height: 22px;
+                    }
+                    .rate-with-date{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 8px;
+                        height: 16px;
+                        font-size: $miniFontSize;
+                        line-height: 14px;
+                        color: $lighterFontColor;
+                        .rate{
+                            .el-rate__icon{
+                                margin: 0;
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                    .comment-detail{
+                        font-size: $normalFontSize;
+                        line-height: 20px;
+                        padding-top: 13px;
+                    }
+                    .merchant-reply{
+                        @extend .comment-detail;
+                        color: $mainStyleColor3;
+                    }
+
+                    .image-box{
+                        width: 828px;
+                        height: 160px;
+                        overflow: hidden;
+
+                        .commnet-image{
+                            margin-right: 0;
+                            box-sizing: border-box;
+                            border: 10px solid #fff;
+                            width: 160px;
+                            height: 160px;
+                        }
+                    }
+
+                    .like-bar{
+                        margin: {
+                            top: 17px;
+                            bottom: 16px;
+                        }
+                        font-size: $miniFontSize;
+                        line-height: 15px;
+                        text-align: right;
+                        color: $lightFontColor;
+                        cursor: pointer;
+                        .liked{
+                            .like-icon{
+                                background-image: url('/image/icons/liked.png')
+                            }
+                           color: #{$mainStyleColor3};
+                        }
+                        .like-icon{
+                            display: inline-block;
+                            margin-right: 6px;
+                            width: 15px;
+                            height: 16px;
+                            vertical-align:bottom;
+                            background : {
+                                image: url('/image/icons/like.png');
+                                size: 100% 100%;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        .pagination{
+            @extend .common-pagination;
+        }
+    }
+}

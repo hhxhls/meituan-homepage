@@ -1,0 +1,225 @@
+@import "../mixin.scss";
+@import "../common.scss";
+
+.cabinet-wrap{
+
+    margin: {
+        top: 10px;
+        left: 10px;
+    }
+
+    .top-row{
+        display: flex;
+        width: 100%;
+        font-size: 0;
+        // font-size: 0;
+        .el-carousel{
+            width: 550px;
+            .item-link{
+                .item-image{
+                    width: 550px;
+                    height: 240px;
+                }
+            }
+        }
+        .cabinet-item{
+            @include mediaQuery($screenLv1){
+                display: none;
+            }
+            .entertainment{
+                margin-left: 10px;
+                width: 150px;
+                height: 240px;
+            }
+        }
+
+        .log-info{
+            $iconFontSize:20px;
+            $iconFontColor: #96e4da;
+
+            .log-icon{
+                font-family: 'logboxicon';
+                font-size: $iconFontSize;
+                line-height: 24px;
+                color:$iconFontColor;
+
+                $iconUnicodeArr: (
+                        'settings':'\e631',
+                        'order':'\e62c',
+                        'favor':'\e62b',
+                        'voucher':'\e630',
+                        'balance':'\e62f',
+                        'more':'\e62d',
+                );
+
+                @each $className,$unicode in $iconUnicodeArr{
+                    &.#{$className}::before{
+                        content: $unicode;
+                    }
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10px;
+            border: $commonBorder;
+            width: 228px;
+            height: 238px;
+            font-size: $largeFontSize;
+            background-color: $contentBgColor;
+
+            .no-log{
+                padding-top: 30px;
+                .log-head{
+                    margin: 0 auto 4px;
+                    border-radius: 50%;
+                    text-align: center;
+                    .head-img{
+                        width: 47px;
+                        height: 47px;
+                        border-radius: 50%;
+                        border: 4px solid #{$commonBorderColor};
+                    }
+                }
+                .greeting{
+                    @extend .ellipsis;
+                    font-size: $largeFontSize;
+                    font-weight: 500;
+                    color: $darkerFontColor;
+                    text-align: center;
+                }
+
+                .btn{
+                    display: block;
+                    margin: 10px auto 15px;
+                    border: $commonBorder;
+                    border-radius: 40px;
+                    width: 118px;
+                    font-size: $normalFontSize;
+                    line-height: 38px;
+                    text-align: center;
+                    color: $darkFontColor;
+                    background-color: $contentBgColor;
+                    transition: background-color .5s;
+                    &:hover{
+                        background-color: $hoverColorGrey;
+                    }
+                }
+            }
+            .logged{
+                position: relative;
+                padding-top: 30px;
+                width: 100%;
+                .settings-link{
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    margin-right: 5px;
+                    i{
+                        font-size: 24px;
+                        color: $lightFontColor;
+                    }
+                }
+                .avatar-box{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    .avatar-link{
+                        .avatar-img{
+                            border-radius: 50%;
+                            border: 4px solid #{$commonBorderColor};
+                            width: 47px;
+                            height: 47px;
+                        }
+                    }
+                    .username{
+                        @extend .ellipsis;
+
+                        margin: 4px auto 0;
+                        width: 6em;
+                        height: 30px;
+                        font-size: $largeFontSize;
+                        font-weight: 500;
+                        text-align: center;
+                        color: $darkerFontColor;
+                    }
+                }
+                .account-shortcut{
+                    .icon-link{
+                        width: 33.3%;
+                        display: inline-flex;
+                        flex-direction: column;
+                        .link-item{
+                            margin: 5px 0;
+                            font-size: $miniFontSize;
+                            text-align: center;
+                            color:$darkerFontColor;
+                        }
+                        .log-icon{
+                            text-align: center;
+                            i{
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-row{
+        display: flex;
+        width: 100%;
+        .cabinet-item{
+            .hotel,.train{
+                margin:{
+                    top: 10px;
+                    right: 10px;
+                }
+                width: 270px;
+                height: 165px;
+            }
+            .partner{
+                @include mediaQuery($screenLv1){
+                    display: none;
+                }
+                width: 150px;
+                height: 165px;
+                margin-top: 10px
+            }
+        }
+        .app{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: {
+                left: 10px;
+                top: 10px;
+            }
+            border: $commonBorder;
+            width: 228px;
+            height: 165px;
+            background-color: $contentBgColor;
+            .qrcode-box{
+                margin-top: 10px;
+                .qrcode{
+                    width: 95px;
+                    height: 95px;
+                }
+            }
+            .des{
+                font-size: $miniFontSize;
+                font-weight: 500;
+                margin-top: 2px;
+                .highlight{
+                    margin-right: 5px;
+                    color: #EC5330;
+                }
+                .normal{
+                    color: #3f3f3f;
+                }
+            }
+        }
+    }
+}

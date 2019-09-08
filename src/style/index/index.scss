@@ -1,0 +1,249 @@
+@import "../mixin.scss";
+
+$outLinkBarHeight: 35px;
+$outLinkItemColor:#222;
+
+.index {
+  .el-row:not(.outlink-wrap) {
+    @include content-size;
+  }
+
+  .outlink-wrap {
+    width: 100%;
+    background-color: $contentBgColor;
+  }
+
+  .outlink-bar {
+    @include content-size;
+    box-sizing: border-box;
+    height: $outLinkBarHeight;
+    position: relative;
+    padding-bottom: 14px;
+
+    $outLinkHoverColors:(
+            'takeout':#fbc700,
+            'movie':#ed1e24,
+            'hotel':#f04d4e,
+            'zhenguo':#fdc411,
+            'business':#31bbac,
+            'charity':#f04d4e,
+    );
+    @each $className, $color in $outLinkHoverColors{
+      .#{$className}:hover{
+        color:$color;
+      }
+
+    }
+
+    .outlink-content {
+      position: absolute;
+      top: 0;
+      left: 280px;
+      width: auto;
+    }
+
+    a {
+      display: inline-block;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: $largeFontSize;
+      color: $outLinkItemColor;
+    }
+
+    .takeout {
+      margin-left: 0px;
+    }
+
+  }
+
+  .banner-container {
+    display: flex;
+  }
+}
+
+.category-list {
+  $tagListColorSettings:
+    'elegant' '' linear-gradient(to right, rgb(194, 176, 142) 3%, rgb(190, 164, 116) 100%),
+    'discount' '' linear-gradient(to right, rgb(255, 113, 74) 2%, rgb(252, 66, 66) 97%),
+    'movie' rgb(250, 60, 104)  linear-gradient(to right, rgb(250, 60, 104) 2%, rgb(254, 70, 77) 97%),
+    'zhenguo' rgb(243, 182, 74) linear-gradient(to right, rgb(243, 182, 74) 2%, rgb(242, 197, 69) 97%),
+    'like' rgb(18, 210, 198) linear-gradient(to right, rgb(18, 210, 198) 2%, rgb(14, 190, 212) 97%),
+    'bottom-nav' rgb(18, 210, 198) linear-gradient(to right, rgb(18, 210, 198) 2%, rgb(14, 190, 212) 97%);
+
+  @each $className, $bgColor,$gradient in  $tagListColorSettings{
+     .#{$className} .tag-list {
+      background: {
+        color: $bgColor;
+        image: $gradient;
+      }
+    }
+  }
+  .category-bar .tag-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.discount .category-bar {
+  @include mediaQuery($screenLv1) {
+    max-height: 575px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}
+
+.movie {
+  .bottom-container{
+    position: relative;
+    .category-bar {
+      width: 100000px;
+      overflow: hidden;
+      margin: 0 16px;
+
+      .poster-wrapper{
+        transition: margin-left .8s ease;
+        &.next-page{
+          margin-left: -1165px;
+          @include  mediaQuery($screenLv1){
+            margin-left: -932px;
+          }
+          &.to-end{
+            @include  mediaQuery($screenLv1){
+              margin-left: -1398px;
+            }
+          }
+        }
+      }
+    }
+    .btn{
+      position: absolute;
+      top: 43%;
+      transform: translateY(50%);
+      border-radius: 40px;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      line-height: 40px;
+      text-align: center;
+      color:$whiteFontColor;
+      background-color: #333;
+      opacity: 0;
+      transition: opacity 0.5s;
+      transform: scale(0.95);
+      z-index: 99;
+      cursor: pointer;
+
+      &.left-btn{
+        left: 0;
+        span{
+          font-family: 'product';
+          &::before{
+            content:'\e608'
+          }
+        }
+      }
+
+      &.right-btn{
+        right: 0;
+        span{
+          font-family: 'product';
+          &::before{
+            content:'\e609'
+          }
+        }
+      }
+
+    }
+    &:hover .btn{
+      opacity: 1;
+    }
+  }
+}
+
+.zhenguo .title {
+  width: 297px;
+}
+
+.like .des .sub-title {
+  margin-bottom: 0;
+}
+
+.like .category-bar {
+  @include mediaQuery($screenLv1) {
+    max-height: 800px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .display-card-wrap {
+      width: 25% !important;
+    }
+  }
+}
+
+.bottom-nav {
+  margin-bottom: 0;
+
+  .bottom-container {
+    padding: 0;
+
+    .nav-bar {
+      .nav-content {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+
+        .list-title {
+          padding: 10px 0;
+          width: 100px;
+          height: 100%;
+          font-size: $normalFontSize;
+          font-weight: 500;
+          text-align: center;
+          color: $darkerFontColor;
+        }
+
+        dl {
+          width: 1090px;
+          display: flex;
+          flex-wrap: wrap;
+          border-bottom: $commonBorder;
+          padding-top: 12px;
+          overflow: hidden;
+          &.last {
+            border: none;
+          }
+          dd {
+            display: inline-block;
+            margin-bottom: 13px;
+            width: 100px;
+            height: 17px;
+            font-size: $miniFontSize;
+
+            a {
+              @extend .link;
+              @extend .ellipsis;
+              display: inline-block;
+              width: 80px;
+              color: $lightFontColor;
+              cursor: pointer;
+
+              i {
+                position: relative;
+                top: -1px;
+                margin: 0 5px;
+                border-radius: 10px;
+                padding: 0 6px;
+                font-size: $miniFontSize;
+                font-weight: 400;
+                color:$whiteFontColor;
+                background-color: #ff4848;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

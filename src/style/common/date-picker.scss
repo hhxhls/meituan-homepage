@@ -1,0 +1,26 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.date-picker{
+    .dialog-lab{
+        width: 30%!important;
+        margin-top: -3px;
+    }
+    .picker-box{
+
+        .des{
+            line-height: 32px;
+            font-size: $normalFontSize;
+            color: #666;
+            padding: 0 5px;
+        }
+
+        select{
+            height: 32px;
+            font-size: $normalFontSize;
+            color: $darkFontColor;
+        }
+    }
+
+
+}

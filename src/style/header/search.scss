@@ -1,0 +1,234 @@
+@import "../mixin.scss";
+@import "./header.scss";
+
+/* 搜索条组件 */
+.search-wrapper {
+    background-color: #fff;
+
+    .search-bar {
+        @include content-size;
+
+        display: flex;
+        font-size: $miniFontSize;
+
+        /* 通用项目*/
+
+        .search-word {
+            color: $lightFontColor
+        }
+
+        /* 站点logo */
+        .logo-box {
+            @include mediaQuery($screenLv1) {
+                padding-right: 40px;
+                min-width: 200px;
+            }
+
+            padding: {
+                top: 28px;
+                right: 60px;
+                bottom: 40px;
+            }
+
+            min-width: 220px;
+            height: 54px;
+            font-size: $largeFontSize;
+
+            .site-logo {
+                width: 126px;
+                height: 46px;
+                vertical-align: bottom;
+            }
+        }
+
+        .right-bar {
+
+            /* 搜索块 */
+            // 搜索块外框
+            .search-content {
+                padding-top: 28px;
+                position: relative;
+
+                // 整体搜索内容
+                .search-block {
+                    box-sizing: border-box;
+                    border: 1px solid #{$mainStyleColor2};
+                    border-radius: 4px;
+                    width: 552px;
+                    height: 42px;
+                    //解决input子元素在缩放比例下因为小数点导致高度溢出，覆盖border
+                    overflow: hidden;
+
+                    @include mediaQuery($screenLv1) {
+                        width: 420px;
+                    }
+
+                    .search-box {
+                        box-sizing: border-box;
+                        border: none;
+                        border-radius: 4px;
+                        padding: 10px;
+                        width: 84%;
+                        height: 40px;
+                        outline: none;
+                        font-size: 15px;
+
+                        border-color: transparent;
+                    }
+
+                    .search-button {
+                        border: none;
+
+                        border: {
+                            top-right-radius: 3px;
+                            bottom-right-radius: 3px;
+                        }
+
+                        width: 16%;
+                        height: 42px;
+                        outline: 0;
+                        background-color: $mainStyleColor2;
+                        cursor: pointer;
+
+                        &:active {
+                            background-color: lighten($mainStyleColor2, 10%);
+                        }
+
+                        span {
+                            font-family: "headicon";
+                            font-size: $largeFontSize;
+                            color:$whiteFontColor;
+
+                            &::before {
+                                content: "\e611";
+                            }
+
+                        }
+                    }
+                }
+
+                // 整体下拉框
+                .search-recommend {
+                    // display: none;
+                    position: absolute;
+                    z-index: 100;
+                    box-sizing: border-box;
+                    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+                    width: 84%;
+                    background-color: #fff;
+
+                    // 搜索框无输入时
+                    .without-input {
+                        padding: 10px;
+
+                        h6 {
+                            padding-bottom: 5px;
+                            font-weight: 700;
+                            color: $lighterFontColor;
+                        }
+
+                        // 历史记录
+                        .his-list {
+                            padding: {
+                                top: 5px;
+                                bottom: 10px;
+                            }
+
+                            a {
+                                color: $lightFontColor;
+
+                                &:hover {
+                                    color: $linkHoverColor;
+                                }
+                            }
+
+                            .his-title {
+                                display: flex;
+                                justify-content: space-between;
+
+
+                                span {
+                                    color: $lighterFontColor;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .his-item-list {
+                                padding-left: 3px;
+
+                                .his-item {
+                                    line-height: 1.6;
+                                }
+                            }
+
+                        }
+
+                        .hot-search-list {
+
+                            padding-top: 5px;
+                            margin-bottom: 5px;
+
+                            .hot-item-list {
+                                @include clear-fix;
+                                width: auto;
+                                height: 25px;
+                                overflow: hidden;
+
+                                .hot-item {
+                                    float: left;
+
+                                    margin: {
+                                        right: 10px;
+                                        bottom: 3px;
+                                    }
+
+                                    line-height: 25px;
+                                }
+                            }
+                        }
+                    }
+
+                    .with-input {
+                        padding: 10px;
+
+                        ul {
+                            li {
+                                line-height: 1.6;
+
+                            }
+                        }
+                    }
+                }
+
+                .hot-keyword {
+                    @include mediaQuery($screenLv1) {
+                        width: 420px;
+                    }
+
+                    ;
+                    box-sizing: border-box;
+                    width: 550px;
+                    height: 2em;
+
+                    padding: {
+                        top: 8px;
+                        left: 12px;
+                    }
+
+                    overflow: hidden;
+
+                    .hot-item {
+                        margin: {
+                            right: 10px;
+                            bottom: 3px;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+
+    }
+}

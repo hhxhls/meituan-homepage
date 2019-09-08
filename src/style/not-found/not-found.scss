@@ -1,0 +1,31 @@
+@import '../mixin.scss';
+
+.not-found{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 564px;
+  margin: 60px auto;
+
+  .not-found-img{
+    width: 284px;
+    height: 224px;
+  }
+  .title{
+    margin-top: 20px;
+    font-size: 20px;
+    color: $darkFontColor;
+  }
+  .msg{
+    margin-top: 9px;
+    font-size: $miniFontSize;
+    color: $lighterFontColor;
+  }
+  .back-to-index{
+    @extend .common-btn;
+    margin: 36px auto;
+    color: $whiteFontColor;
+    background-color: $mainStyleColor1;
+
+  }
+}

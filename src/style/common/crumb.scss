@@ -1,0 +1,29 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+// 重置element-ui crumb的样式
+.el-breadcrumb {
+        .is-link {
+            @extend .link;
+            color: $darkerFontColor!important;
+            font-weight: 400!important;
+            cursor: pointer!important;
+        }
+
+        .el-icon-arrow-right {
+            width: 4px;
+            height: 4px;
+
+            border: {
+                right: 1px solid #222;
+                top: 1px solid #222;
+            }
+
+            transform: translate(-4px, -1px) rotate(45deg);
+
+            &::before {
+                content: '';
+            }
+    }
+
+}

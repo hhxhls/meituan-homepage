@@ -1,0 +1,184 @@
+@import '../mixin.scss';
+@import '../common.scss';
+
+.product-item-wrap{
+    font-size: $normalFontSize;
+    color: $darkFontColor;
+    line-height: 20px;
+    .product-item{
+        display: flex;
+        justify-content: space-between;
+        padding: {
+            top: 20px;
+            bottom: 16px;
+        }
+        min-height: 125px;
+        border-top: $commonBorder;
+
+        .img-box{
+            flex-shrink: 0;
+            width: 220px;
+            height: 125px;
+            background-color: #f4f4f4;
+            position: relative;
+            .product-img{
+                border-radius: 4px;
+                width: 100%;
+                height: 100%;
+            }
+            .product-rank{
+                position: absolute;
+                margin:{
+                    left: -3px;
+                    top: 3px;
+                }
+                border-radius: 2px;
+                width: 20px;
+                font-size: $miniFontSize;
+                line-height: 13px;
+                text-align: center;
+                color:$whiteFontColor;
+                background: #FB6433;
+            }
+        }
+
+        .info-box{
+            padding-left: 20px;
+            width: 100%;
+            font-size: $miniFontSize;
+            color: #666;
+            .basic-des{
+                padding-bottom: 10px;
+                &.with-deal{
+                    border-bottom: 1px dashed #{$commonBorderColor};
+                }
+                .title{
+                    display: block;
+                    text-decoration: none;
+                    font-size: $largeFontSize;
+                    font-weight: 500;
+                    color: $darkFontColor;
+                }
+                .rate-block{
+                    margin-top: 6px;
+                    line-height: 20px;
+                    .el-rate{
+                        display: inline-block;
+                        vertical-align: bottom;
+                        .el-rate__icon.el-icon-star-on{
+                            margin-right: 0;
+                        }
+                    }
+
+                    .rate-items{
+                        margin-right: 10px;
+                    }
+
+                    .comments{
+                        color: #f90;
+                    }
+
+                }
+
+                .sub-title{
+                    &>span{
+                        @extend .ellipsis;
+                        margin-right: 10px;
+                    }
+                    .area{
+                        max-width: 110px;
+                    }
+                    .address{
+                        max-width: 460px;
+                    }
+                }
+            }
+            .deal-container{
+                padding-top: 10px;
+                .dicount-item{
+                    .deal-link{
+                        display: block;
+                        margin-left: -10px;
+                        padding: 6px 10px 8px;
+                        color: $lightFontColor;
+                        transform: background-color .5s;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: $bgColor;
+                            .title{
+                                color:$mainStyleColor1;
+                            }
+                        }
+                        .title{
+                            font-size: $normalFontSize;
+                        }
+                        .deal-info{
+                            .price{
+                                margin-right: 10px;
+                                font-size: 15px;
+                                color: #f60;
+                            }
+                            .old-price{
+                                margin-right: 10px;
+                                font-size: $miniFontSize;
+                                color: $lighterFontColor;
+                            }
+                            .sold{
+                                font-size: $miniFontSize;
+                                color: $lighterFontColor;
+                            }
+                        }
+                    }
+                }
+                .add-toggle{
+                    margin-top: 16px;
+                    line-height: 1;
+                    cursor: pointer;
+                    transform: background-color .5s;
+                    &.hover{
+                        background-color: $bgColor;
+                        .drop-ctrl{
+                            color: $mainStyleColor1;
+                        }
+                    }
+                    .before-drop{
+                        font-size: $miniFontSize;
+                        color: #666;
+                        &::after{
+                            content: '';
+                            display: inline-block;
+                            margin: {
+                                left: 8px;
+                            }
+                            width: 5px;
+                            height: 5px;
+                            border: {
+                                left: 2px solid #ccc;
+                                bottom: 2px solid #ccc
+                            }
+                            transform: translateY(-1px) rotate(-45deg)
+
+                        }
+
+                    }
+                    .after-drop{
+                        &::after{
+                            content: '';
+                            display: inline-block;
+                            margin: {
+                                left: 8px;
+                            }
+                            width: 5px;
+                            height: 5px;
+                            border: {
+                                left: 2px solid #ccc;
+                                bottom: 2px solid #ccc
+                            }
+                            transform: translateY(2px) rotate(135deg)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,168 @@
+
+@import '../common.scss';
+@import '../mixin.scss';
+.groupbuy-page{
+    margin: 0 auto;
+    width: 1190px;
+    box-sizing: border-box;
+    color: $darkerFontColor;
+
+    .page-crumbs{
+        margin: 20px 0 22px;
+    }
+
+    .groupbuy-detail-wrap{
+        width: 1190px;
+        margin: 0 auto;
+        .section-box{
+            @extend .common-box;
+        }
+        .shop-info{
+            display: inline-block;
+            width: 33.3%;
+            font-size: $normalFontSize;
+            line-height: 20px;
+            color: #666;
+
+
+            .shop-name{
+                margin-bottom: 6px;
+                font-size: $largeFontSize;
+                font-weight: 700;
+                line-height: 22px;
+                color: $darkerFontColor;
+            }
+            .rate{
+                margin: {
+                    top: 2px;
+                    bottom: 2px;
+                }
+
+                .el-rate{
+                    display: inline-block;
+                    vertical-align: top;
+                    .el-rate__item{
+                        margin-left: 0px;
+                    }
+                    .el-rate__icon{
+                        margin-right: 0px;
+                    }
+                }
+                span{
+                    margin-left: 3px;
+                }
+            }
+            .tel,.address{
+                margin-top: 6px;
+            }
+        }
+        .order-table{
+            border-radius: 4px;
+            padding: 0 20px;
+            background-color: #fff;
+
+            .table-title{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: $commonBorder;
+                height: 48px;
+                font-size: $normalFontSize;
+                line-height: 48px;
+
+                .right{
+                    span{
+                        display: inline-block;
+                        width: 110px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .sub-menu{
+                display: flex;
+
+                dt{
+                    width: 154px;
+                    line-height: 45px;
+                    font-size: $normalFontSize;
+                    color: $darkerFontColor;
+                }
+
+                dl{
+                    font-size: 0;
+                    dd{
+                        display: flex;
+                        span{
+                            display: inline-block;
+                            font-size: $normalFontSize;
+                            line-height: 45px;
+                             color: $darkerFontColor;
+                        }
+                        .dish-name{
+                            width: 173px;
+                        }
+
+                        .price-detail{
+                            span{
+                                width: 110px;
+                                text-align: center;
+
+                                &.unit-count{
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .total-count{
+                border-top: $commonBorder;
+                font-size: $normalFontSize;
+                line-height: 49px;
+                text-align: right;
+                b{
+                    color: #f40;
+                }
+                & > span{
+                    display: inline-block;
+                    margin-left: 53px;
+                    color: $lightFontColor;
+                }
+            }
+        }
+        .buy-noti{
+            .des-text{
+                font-size: $miniFontSize;
+                line-height: 20px;
+                color: $lightFontColor;
+            }
+            .noti-content{
+                font-size: $normalFontSize;
+                color: $darkerFontColor;
+                background-color: $contentBgColor;
+            }
+
+            .display-img{
+               .outer-title{
+                margin: {
+                    top: 40px;
+                    bottom: 8px;
+                };
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 28px;
+                color: $darkerFontColor;
+               }
+               .img-box{
+                   img{
+                       width: 100%;
+                   }
+                   .dish-name{
+                        padding: 15px 0 20px;
+                   }
+               }
+            }
+        }
+    }
+}

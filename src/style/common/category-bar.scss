@@ -1,0 +1,78 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.category-wrap{
+    margin: 40px auto;
+    .top-tags{
+
+        box-sizing: border-box;
+        border: {
+            top-right-radius:5px;
+            top-left-radius: 5px;
+        }
+        width: 100%;
+        height: 44px;
+        font-size: $normalFontSize;
+        line-height: 44px;
+        background-color: rgb(190, 164, 116);
+        color:$whiteFontColor;
+
+        .tag-list{
+            display: flex;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .bar-item{
+            position: relative;
+            padding: 0 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .tag-title{
+            margin: {
+                left: 13px;
+                right: 10px;
+            }
+            font-family: 'MFShangHei';
+            font-size: 18px;
+        }
+        .bar-tag{
+            &::after{
+                display: none;
+                position: absolute;
+                top: 37px;
+                right: 0;
+                left: 0;
+                margin: auto;
+                border: {
+                    left: 5px solid transparent;
+                    right: 5px solid transparent;
+                    bottom: 7px solid #fff;
+                }
+                width: 2px;
+                height: 0;
+                content: ' ';
+            }
+            &.active::after{
+                display: block;
+            }
+        }
+    }
+    .bottom-container{
+
+        $border-setting:1px solid #e5e5e5;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+        border: {
+            bottom-left-radius: 4px;
+            bottom-right-radius:4px;
+            left: $border-setting;
+            right: $border-setting;
+            bottom: $border-setting;
+        }
+        padding: 11px 10px 10px;
+        background-color: #fff;
+    }
+}

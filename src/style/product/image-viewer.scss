@@ -1,0 +1,187 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.image-viewer{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+
+    &.show{
+        display: block;
+    }
+    .main-wrap{
+        position: relative;
+        display:  flex;
+        flex-direction: column;
+        align-content: center;
+        width: 1190px;
+        height: 100%;
+        margin: 0 auto;
+        .showcage{
+            position: relative;
+            padding-top: 30px;
+
+            .close{
+                margin: {
+                    right: 30px;
+                    bottom:40px;
+
+                }
+                text-align: right;
+                height: 30px;
+                cursor: pointer;
+                .close-btn{
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    font-family: 'product';
+                    font-size: 30px;
+                    color:$whiteFontColor;
+                    &::before{
+                        content: "\e60b";
+                    }
+                }
+            }
+
+            .main-img-container{
+                position: relative;
+                max-height: 314px;
+                width: 60%;
+                margin: auto;
+                overflow: hidden;
+                color:$whiteFontColor;
+                .main-img{
+                    display: block;
+                    border-radius: 4px;
+                    width: 100%;
+                    max-height: 100%;
+                }
+                .assist-text{
+                    position: absolute;
+                    bottom: 0;
+                    padding-left: 12px;
+                    width: 100%;
+                    height: 30px;
+                    font-size: $normalFontSize;
+                    line-height: 30px;
+                    background-color: rgba(0,0,0,.4);
+
+                }
+
+            }
+
+            .btn{
+                position: absolute;
+                top: 50%;
+                transform: translateY(50%);
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                line-height: 50px;
+                text-align: center;
+                color: rgba(255,255,255,.8);
+                background-color: rgba(0,0,0,0.6);
+                cursor: pointer;
+                &.disabled{
+                    background-color: rgba(0,0,0,0.3);
+                    color: rgba(255,255,255,.3);
+                    cursor:not-allowed;
+                }
+            }
+
+            .left-btn{
+                left: 0;
+                span{
+                    font-family: 'product';
+                    &::before{
+                        content:'\e608'
+                    }
+                }
+            }
+
+            .right-btn{
+                right: 0;
+                span{
+                    font-family: 'product';
+                    &::before{
+                        content:'\e609'
+                    }
+                }
+            }
+        }
+        .thumb-container{
+            position: absolute;
+            bottom: 20px;
+            width: 1190px;
+            height: 107px;
+            overflow: hidden;
+            .thumb-list{
+                width: 100000px;
+                height: 100%;
+                overflow: hidden;
+                .thumb{
+                    display: inline-block;
+                    box-sizing: border-box;
+                    width: 190px;
+                    height: 107px;
+                    margin-right: 10px;
+                    vertical-align: top;
+                    cursor: pointer;
+                    &.active{
+                        box-sizing: border-box;
+                        border: 2px solid #fff;
+                        border-radius: 4px;
+                    }
+                }
+
+                .thumb-img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .btn{
+                display: block;
+                position: absolute;
+                top: 0;
+                width: 30px;
+                height: 107px;
+                font-size: 30px;
+                line-height: 107px;
+                color: #eee;
+                cursor: pointer;
+
+                &.disabled{
+                    display: none;
+                }
+            }
+
+            .left-btn{
+                left: 0;
+                background:linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.1));
+                span{
+                    font-family: 'product';
+                    &::before{
+                        content:'\e608'
+                    }
+                }
+            }
+
+            .right-btn{
+                right: 0;
+                background:linear-gradient(to left, rgba(0,0,0,.5), rgba(0,0,0,.1));
+                span{
+                    font-family: 'product';
+                    &::before{
+                        content:'\e609'
+                    }
+                }
+            }
+        }
+    }
+}

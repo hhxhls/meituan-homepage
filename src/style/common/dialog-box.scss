@@ -1,0 +1,76 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.dialog-box{
+    border-radius: 10px;
+    background-color: #fff;
+    width: 100%;
+
+    .dialog-head{
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        width: 100%;
+        height: 50px;
+        background-color: #f7f7f7;
+
+        .title{
+            padding-left: 20px;
+            font-size: $normalFontSize;
+            font-weight: 500;
+            line-height: 50px;
+            color: $darkFontColor;
+        }
+
+        .close{
+            display: inline-block;
+            margin: 12px 20px 12px 0;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: $miniFontSize;
+            line-height: 40px;
+            font-family: "product";
+            color: #e5e5e5;
+            text-align: center;
+            background-color: #696969;
+            cursor: pointer;
+
+            &::before{
+                display: inline-block;
+                position: relative;
+                top: -8px;
+                font-weight: 700;
+                content: "\E60B";
+            }
+        }
+    }
+
+    .dialog-body{
+        margin: 20px auto;
+        min-height: 10px;
+    }
+    .btn-chooses{
+        text-align: center;
+        padding: 0 0 25px;
+
+        .confirm,.cancel{
+            @extend .common-btn;
+            height: 40px;
+            width: 120px;
+        }
+
+        .confirm{
+            margin-right: 20px;
+            background-color: #B7F1EB;
+            border-color: #B7F1EB;
+            color:$whiteFontColor;
+
+        }
+
+        .cancel{
+            background-color: #fff;
+        }
+    }
+
+}

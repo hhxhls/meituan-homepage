@@ -1,0 +1,199 @@
+@import "../mixin.scss";
+@import "../common.scss";
+
+.nav-menu {
+    box-sizing: border-box;
+    position: relative;
+    flex-shrink: 0;
+    margin-top: -50px;
+    width: 230px;
+    height: 475px;
+    color: $contentBgColor;
+    background: linear-gradient(rgba(2, 181, 157, .85) 2%, rgba(22, 146, 183, .85) 100%);
+
+    .title {
+        height: 35px;
+        padding: {
+            top: 15px;
+            left: 15px;
+        }
+
+        font-size: $largeFontSize;
+        font-weight: 400;
+    }
+
+    .menu-content {
+        .menu-tab-list {
+            padding: 10px 0 8px;
+            height: 425px;
+            box-sizing: border-box;
+
+            .menu-tab {
+                display: flex;
+                justify-content: space-between;
+                padding: 2px 12px;
+                height: 22px;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2)
+                }
+
+                .menu-title {
+                    display: flex;
+                    box-sizing: border-box;
+
+                    i {
+                        font-family: 'menuicon';
+                        line-height: 22px;
+
+                        &::before {
+                            display: inline-block;
+                            opacity: 0.3;
+                            width: 14px;
+                            height: 14px;
+                            font-size: $normalFontSize;
+                        }
+                        $menuIconSettings:(
+                                'cuisine': '\e622',
+                                'takeout': '\e630',
+                                'hotel': '\e62a',
+                                'zhenguo': '\e631',
+                                'movie': '\e62c',
+                                'ticket': '\e632',
+                                'entertainment': '\e627',
+                                'life-service': '\e633',
+                                'beauty': '\e633',
+                                'wedding': '\e629',
+                                'children': '\e623',
+                                'sport': '\e62b',
+                                'decorate': '\e625',
+                                'training': '\e624',
+                                'medic': '\e628',
+                                'bar': '\e621',
+                        );
+
+                        @each $className,$unicode in $menuIconSettings {
+                            &.#{$className}::before{
+                                content: $unicode;
+                            }
+                        }
+
+                    }
+
+                    .cate-list {
+                        display: flex;
+                        margin-left: 11px;
+                        line-height: 22px;
+
+                        .cate {
+                            font-size: 13px;
+                        }
+
+                        a {
+                            color:$whiteFontColor;
+                        }
+                    }
+
+                    .hot {
+                        display: inline-block;
+                        margin-left: 5px;
+                        border-radius: 10px;
+                        padding: 0 7px;
+                        font-size: $miniFontSize;
+                        color: #02B59D;
+                        opacity: .5;
+                        background-color: #fff;
+                        transform: scale(0.9)
+                    }
+                }
+
+                .arrow {
+                    width: 4px;
+                    height: 4px;
+                    line-height: 22px;
+
+                    border: {
+                        right: 1px solid #fff;
+                        bottom: 1px solid #fff;
+                    };
+                    transform: translateY(10px) rotate(-45deg)
+                }
+
+            }
+
+        }
+
+        .detail-list {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 230px;
+            z-index: 10;
+            width: 400px;
+            height: 416px;
+            color: $lightFontColor;
+            overflow: hidden;
+            background-color: #fff;
+
+            .detail-bar {
+                .bar-content {
+                    padding: 0 30px;
+                    .bar-title {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 24px;
+                        border-bottom: $commonBorder;
+                        padding-bottom: 10px;
+                        height: 22px;
+                        line-height: 22px;
+
+                        .title-des {
+                            font-size: $largeFontSize;
+                            font-weight: 500;
+                            color: $darkerFontColor;
+                            cursor: pointer;
+                        }
+
+                        .more {
+                            margin-right: 6px;
+                            font-size: $miniFontSize;
+                            font-weight: 400;
+                            color: $lighterFontColor;
+                            cursor: pointer;
+
+                            &::after {
+                                display: inline-block;
+                                content: '';
+                                border-bottom: 1px solid #999;
+                                border-right: 1px solid #999;
+                                width: 4px;
+                                height: 4px;
+                                vertical-align: middle;
+                                transform: rotate(-45deg)
+                            }
+                        }
+                    }
+
+                    .tag-list {
+                        .tag {
+                            @extend .link;
+                            display: inline-block;
+                            margin: {
+                                top: 10px;
+                                right: 16px;
+                            }
+                            font-size: $miniFontSize;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .show {
+            display: block;
+        }
+    }
+
+}

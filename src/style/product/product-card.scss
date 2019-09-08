@@ -1,0 +1,117 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.product-detail{
+    display: flex;
+    border-radius: 10px;
+    border: $commonBorder;
+    padding: 20px 20px 33px;
+    width: 100%;
+    font-size: $miniFontSize;
+    color: $lightFontColor;
+    background-color: $contentBgColor;
+    box-shadow:0 5px 14px 0 rgba(0,0,0,.1);
+    .left{
+        flex-shrink: 0;
+        padding-right: 20px;
+        width: 748px;
+        .title{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            font-size: 26px;
+            line-height: 37px;
+
+            span{
+                font-size: $miniFontSize;
+                color: $mainStyleColor3;
+                cursor: pointer;
+                .icon{
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 15px;
+                    height: 18px;
+                }
+            }
+        }
+
+        .basic-info{
+            display: flex;
+            margin: {
+                top: 6px;
+                bottom: 17px;
+            }
+
+            .el-rate__icon{
+                margin-right: 0px;
+            }
+            & > span{
+                font-size: $normalFontSize;
+            }
+            .score-texts{
+                margin-left: 6px;
+            }
+        }
+
+        .middle-bar{
+            border: {
+                top:$commonBorder;
+                bottom: $commonBorder;
+            };
+            padding: {
+                top: 16px;
+                bottom: 11px;
+            };
+            p{
+                margin-bottom: 10px;
+                font-size: $normalFontSize;
+                line-height: 20px;
+            }
+        }
+
+        .bottom-bar{
+            padding-top: 20px;
+            .tag{
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 16px;
+                img{
+                    margin-bottom: 10px;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    .right{
+        width: 380px;
+        overflow: hidden;
+        cursor: pointer;
+        .show-img{
+            border-radius: 4px;
+            width: 100%;
+            height: 214px;
+        }
+
+        .thumb-list{
+            padding-top: 10px;
+            width: 385px;
+
+            .thumb-container{
+                display: inline-block;
+                margin-right: 4px;
+                width: 92px;
+                height: 50px;
+                .thumb{
+                    border-radius: 4px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+    }
+
+}

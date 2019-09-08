@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "headicon";
+    src: url("../assets/fonts/headicon/headicon.eot");
+    src: url("../assets/fonts/headicon/headicon.woff") format('woff'), url("../assets/fonts/headicon/headicon.ttf") format('truetype')
+}
+
+@font-face {
+    font-family: "menuicon";
+    src: url("../assets/fonts/menuicon/menuicon.eot");
+    src: url("../assets/fonts/menuicon/menuicon.woff") format('woff'), url("../assets/fonts/menuicon/menuicon.ttf") format('truetype')
+}
+
+@font-face {
+    font-family: "logboxicon";
+    src: url("../assets/fonts/logboxicon/logboxicon.eot");
+    src: url("../assets/fonts/logboxicon/logboxicon.woff") format('woff'), url("../assets/fonts/logboxicon/logboxicon.ttf") format('truetype')
+}
+
+@font-face {
+    font-family: "numbers";
+    src: url("../assets/fonts/numbers/numbers.eot");
+    src: url("../assets/fonts/numbers/numbers.woff") format('woff'), url("../assets/fonts/numbers/numbers.ttf") format('truetype')
+}
+
+@font-face {
+    font-family: "MFShangHei";
+    src: url("../assets/fonts/MFShangHei/MFShangHei.eot");
+    src: url("../assets/fonts/MFShangHei/MFShangHei.woff") format('woff'), url("../assets/fonts/MFShangHei/MFShangHei.ttf") format('truetype')
+}
+
+@font-face {
+    font-family: "product";
+    src: url("../assets/fonts/product/product.eot");
+    src: url("../assets/fonts/product/product.woff") format('woff'), url("../assets/fonts/product/product.ttf") format('truetype')
+}
+@font-face {
+    font-family: "account";
+    src: url("../assets/fonts/account/account.eot");
+    src: url("../assets/fonts/account/account.woff") format('woff'), url("../assets/fonts/account/account.ttf") format('truetype')
+}
+@font-face {
+    font-family: "account-col";
+    src: url("../assets/fonts/account-col/account-col.eot");
+    src: url("../assets/fonts/account-col/account-col.woff") format('woff'), url("../assets/fonts/account-col/account-col.ttf") format('truetype')
+}
+

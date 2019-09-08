@@ -1,0 +1,233 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.account {
+    margin: 20px auto;
+    width: 1190px;
+
+    .page-main {
+        display: flex;
+        justify-content: space-between;
+
+        .left-bar {
+
+            a {
+                color: $darkerFontColor;
+                font-weight: 500;
+                cursor: pointer;
+
+                &:hover {
+                    color: #{$mainStyleColor1} !important;
+                }
+            }
+
+            .left-menus {
+                @extend .common-box;
+                box-sizing: border-box;
+                padding: 0 20px 20px 30px;
+                width: 230px;
+
+                .menu-item {
+                    &.gap {
+                        margin-top: 30px;
+                    }
+
+                    .list-title {
+                        margin: 12px 0;
+
+                        a {
+                            font-size: $largeFontSize;
+                        }
+                    }
+
+                    .sub-list {
+                        .sub-item {
+                            display: flex;
+                            justify-content: space-between;
+                            margin: 15px 0;
+
+                            a {
+                                font-size: $normalFontSize;
+                                color: $lightFontColor;
+                            }
+
+                            i {
+                                display: block;
+                                width: 8px;
+                                height: 18px;
+
+                                background: {
+                                    image: url('/image/common/icon-right.png');
+                                    repeat: no-repeat;
+                                    size: 100%;
+                                    position: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .app {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+                border: 1px solid #{$commonBorderColor};
+                width: 228px;
+                height: 165px;
+                background-color: $contentBgColor;
+
+                .qrcode-box {
+                    margin-top: 10px;
+
+                    .qrcode {
+                        width: 95px;
+                        height: 95px;
+                    }
+                }
+
+                .des {
+                    font-size: $miniFontSize;
+                    font-weight: 500;
+                    margin-top: 2px;
+
+                    .highlight {
+                        margin-right: 5px;
+                        color: #EC5330;
+                    }
+
+                    .normal {
+                        color: #3f3f3f;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-info {
+        width: 950px;
+    }
+
+    .bottom-nav {
+        margin-bottom: 0;
+
+        .tag-list {
+            background-image: linear-gradient(to right, rgb(18, 210, 198) 2%, rgb(14, 190, 212) 97%);
+            background-color: rgb(18, 210, 198);
+        }
+
+        .bottom-container {
+            padding: 0;
+
+            .nav-bar {
+
+                .nav-content {
+                    display: flex;
+                    width: 100%;
+                    overflow: hidden;
+
+
+                    .list-title {
+                        padding: 10px 0;
+                        width: 100px;
+                        height: 100%;
+                        font-size: $normalFontSize;
+                        font-weight: 500;
+                        text-align: center;
+                        color: $darkerFontColor;
+
+                    }
+                    dl {
+                        width: 1090px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        border-bottom: 1px solid #{$commonBorderColor};
+                        padding-top: 12px;
+                        overflow: hidden;
+
+                        &.last {
+                            border: none;
+                        }
+
+                        dd {
+                            display: inline-block;
+                            margin-bottom: 13px;
+                            width: 100px;
+                            height: 17px;
+                            font-size: $miniFontSize;
+
+                            a {
+                                @extend .link;
+                                @extend  .ellipsis;
+
+                                display: inline-block;
+                                width: 80px;
+                                color: $lightFontColor;
+                                cursor: pointer;
+
+                                i {
+                                    position: relative;
+                                    top: -1px;
+                                    margin: 0 5px;
+                                    border-radius: 10px;
+                                    padding: 0 6px;
+                                    font-size: $miniFontSize;
+                                    font-weight: 400;
+                                    color:$whiteFontColor;
+                                    background-color: #ff4848;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .account-box{
+        @extend .common-box;
+        padding: 25px 25px 0;
+    }
+    .account-head {
+        .head-list {
+            display: flex;
+            margin-top: 10px;
+
+            .head-tab {
+                display: inline-block;
+                margin-right: 25px;
+                width: 105px;
+                height: 38px;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 26px;
+                text-align: center;
+                cursor: pointer;
+
+                &.active {
+                    color: $mainStyleColor1;
+                    border-bottom: 2px solid #{$mainStyleColor1};
+                }
+
+                span {
+                    color: $mainStyleColor1;
+                }
+            }
+        }
+    }
+
+    .account-main {
+        .main-item {
+            border-top: 1px solid #{$commonBorderColor};
+        }
+
+        .no-item {
+            border-top: 1px solid #{$commonBorderColor};
+            padding: 40px 0;
+            font-size: $normalFontSize;
+            text-align: center;
+            color: $lightFontColor;
+        }
+    }
+}

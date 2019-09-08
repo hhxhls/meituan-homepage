@@ -1,0 +1,186 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.groupbuy-card{
+    @extend .common-box;
+    display: flex;
+    margin-bottom: 17px;
+    width: 100%;
+    box-shadow: $commonBoxShadow;
+
+    .line-title{
+        display: inline-block;
+        width: 95px;
+        font-size: $normalFontSize;
+        color: $darkerFontColor;
+    }
+
+    .image-box{
+        flex-shrink: 0;
+        @extend .lazy-load;
+        width: 428px;
+        height: 320px;
+        margin-right: 22px;
+        .gb-img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .detail-box{
+        flex-grow: 1;
+        .title{
+            margin-bottom:10px;
+            font-size: 26px;
+            line-height: 37px;
+            font-weight: 700;
+        }
+        .sub-title{
+            border-bottom: $commonBorder;
+            padding-bottom: 10px;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .price-related{
+            display: flex;
+            justify-content: space-between;
+            padding: {
+                top: 17px;
+                bottom: 22px;
+            }
+            .left{
+                span{
+                    display: inline-block;
+                }
+                .line-title{
+                    padding-top: 28px;
+                    line-height: 20px;
+                }
+                .current-price{
+                    color: #F90;
+                    .mark{
+                        font-size: $largeFontSize;
+                        display: inline;
+                        font-style: normal;
+                    }
+                    .number{
+                        font-size: 38px;
+                        line-height: 50px;
+                    }
+                }
+                .shop-price{
+                    margin-left: 10px;
+                    font-size: $miniFontSize;
+                    color: $lighterFontColor;
+                    text-decoration: line-through;
+                }
+                .discount{
+                    margin-left: 5px;
+                    font-size: $miniFontSize;
+                    line-height: 14px;
+                    color: #FA952F;
+                    background-color: #FEF4EA;
+                }
+            }
+
+            .right{
+                padding-top: 26px;
+                font-size: $miniFontSize;
+                color: $lightFontColor;
+            }
+        }
+        .packages{
+            display: flex;
+            dt,dd{
+                display: inline-block;
+            }
+            .line-title{
+                flex-shrink: 0;
+                line-height: 36px;
+            }
+            .package-tag {
+                box-sizing: border-box;
+                margin: {
+                    bottom: 16px;
+                    right:15px;
+                };
+                border: $commonBorder;
+                border-radius: 2px;
+                padding: 0 10px;
+                height: 36px;
+                line-height: 36px;
+                text-align: center;
+                color: $lightFontColor;
+                cursor: pointer;
+
+                &.chosen{
+                    color:$whiteFontColor;
+                    background-color: $mainStyleColor1;
+                    border-color: $mainStyleColor1;
+                }
+            }
+        }
+        .order-num{
+            padding-bottom: 27px;
+            .line-title{
+                flex-shrink: 0;
+                line-height: 36px;
+            }
+            .counter{
+                display: inline-block;
+                text-align: center;
+                line-height: 36px;
+                border: $commonBorder;
+                .change-buy-number{
+                    box-sizing: content-box;
+                    border: none;
+                    width: 34px;
+                    height: 34px;
+                    font-size:28px;
+                    vertical-align: top;
+                    color: $lightFontColor;
+                    background-color: $contentBgColor;
+                    cursor: pointer;
+                    &.disabled{
+                        color: $commonBorderColor;
+                    }
+
+                }
+                .order-number{
+                    border-left: $commonBorder;
+                    border-right: $commonBorder;
+                    border-top: none;
+                    border-bottom: none;
+                    width: 34px;
+                    height: 34px;
+                    text-align: center;
+                }
+            }
+        }
+        .valid-days{
+            font-size: $normalFontSize;
+            padding-bottom: 24px;
+        }
+        .btn-line{
+            margin-bottom: 27px;
+            padding-left: 95px;
+            .buy-now{
+                display: block;
+                border-radius: 100px;
+                width: 150px;
+                height: 50px;
+                font-size: 20px;
+                line-height: 50px;
+                text-align: center;
+                color:$whiteFontColor;
+                background-color: #f90;
+                cursor: pointer;
+            }
+        }
+        .gurantee{
+            font-size: $normalFontSize;
+            color: $lightFontColor;
+        }
+    }
+
+}

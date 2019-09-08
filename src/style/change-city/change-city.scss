@@ -1,0 +1,197 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.with-bottom-line{
+    border-bottom: $commonBorder;
+}
+
+.change-city-main{
+    @include content-size;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: $commonBorder;
+    border-radius: 4px;
+    padding: 20px;
+    background-color: $contentBgColor;
+
+    .selector-wrap{
+        display: flex;
+        padding-bottom: 30px;
+        .choose-area,.search-area{
+            display: flex;
+            vertical-align: middle;
+        }
+        .choose-area{
+            margin-right: 40px;
+            h4{
+                vertical-align: middle;
+                line-height: 40px;
+            }
+            .choose{
+                z-index: 12;
+            }
+            .province{
+                margin: 0 10px 0 20px;
+            }
+            .city{
+                margin: 0 20px 0 10px;
+            }
+        }
+
+        .search-area{
+            line-height: 40px;
+            position: relative;
+            .el-input{
+                border-radius: 4px;
+                padding-left: 10px;
+                width: 220px;
+                height: 40px;
+                .el-input__inner{
+                    color: #666;
+                    &::placeholder{
+                        color: $lightFontColor;
+                    }
+                }
+
+            }
+            .city-suggest-wrap{
+                @include drop-with-triangle(-6px, -4px, 26px);
+
+                //display: none;
+                position: absolute;
+                top: 47px;
+                left: 90px;
+                border-radius: 4px;
+                cursor: default;
+                z-index: 1;
+
+                &.drop{
+                    display: block;
+                }
+                .city-suggestion{
+                    box-sizing: border-box;
+                    border: $commonBorder;
+                    border-radius: 4px;
+                    padding: 0 20px 0 15px;
+                    min-width: 150px;
+                    max-height: 375px;
+                    overflow-y: scroll;
+                    background-color: $contentBgColor;
+                    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.10);
+                    a{
+                        display: block;
+                        box-sizing: border-box;
+                        padding: 1px 8px;
+                        min-width: 40px;
+                        height: 20px;
+                        margin: 6px 38px 6px 0;
+                        font-size: $miniFontSize;
+                        color: $lightFontColor;
+                        white-space: nowrap;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .tag-list-wrap{
+        border-bottom: 1px solid #e5e5e5;
+        padding: 30px 0;
+
+        dt{
+            font-size: $largeFontSize;
+            color: $darkFontColor;
+            font-weight: 500;
+            vertical-align: top;
+            display: inline-block;
+        }
+        dl{
+            display: inline-block;
+            max-width: 900px;
+            vertical-align: top;
+            dd{
+                display: inline-block;
+                a{
+                    @extend .link;
+                    margin: 0 20px;
+                    font-size: $normalFontSize;
+                    color: $lightFontColor;
+                }
+            }
+        }
+
+    }
+
+    .alphabet-wrap{
+        .top-list{
+            border: none;
+            padding: 30px 0;
+            dl{
+                max-width: 1190px;
+            }
+            a{
+                display: inline-block;
+                box-sizing: border-box;
+                margin: 0 10px;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                font-size: 15px;
+                text-align: center;
+                color: $lightFontColor;
+                cursor: pointer;
+                &:hover{
+                    background-color: $bgColor;
+                }
+            }
+        }
+        .detail-wrap{
+            .detail-list{
+                display: flex;
+                flex-wrap: wrap;
+                padding: {
+                    top: 13px;
+                    right: 30px;
+                    bottom: 13px;
+                    left: 13px;
+                    transition: background-color .5s;
+                }
+                &:hover{
+                    background-color: $bgColor;
+                }
+
+                .tag-title{
+                    box-sizing: border-box;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    // vertical-align: top;
+                    color:$whiteFontColor;
+                    background-color: $mainStyleColor2;
+                    box-shadow: 0 4px 5px 0 rgba(39,178,164,.22)
+                }
+
+                .tag-list{
+                    max-width: 1065px;
+                    .tag-item{
+                        display: inline-block;
+                        a{
+                            @extend .link;
+                            display: inline-block;
+                            margin: 10px 20px;
+                            font-size: $normalFontSize;
+                            color: $lightFontColor;
+
+                            &.hotCity{
+                                color: #F60;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

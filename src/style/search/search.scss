@@ -1,0 +1,223 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.search-page {
+    @include content-size;
+    padding-top: 10px;
+    .crumb {
+        margin: 10px 0;
+    }
+
+    .search-body{
+        display: flex;
+        .product-content{
+            width: 950px;
+            .product-filter{
+                margin-top: 10px;
+                border: $commonBorder;
+                border-radius: 4px;
+                font-size: $normalFontSize;
+                font-weight: 500;
+                line-height: 20px;
+                color: $darkFontColor;
+                background-color: $contentBgColor;
+
+                .chosen-filters{
+                    display: flex;
+                    box-sizing: border-box;
+                    border-bottom: $commonBorder;
+                    padding: 11px 20px;
+                    width: 100%;
+                    min-height: 21px;
+                    font-size: $miniFontSize;
+                    label{
+                        font-size: $normalFontSize;
+                        margin-right:20px;
+                    }
+                    .tags{
+                        margin-right: 10px;
+                        border: 1px solid #{$mainStyleColor1};
+                        border-radius: 10px;
+                        padding: 0 6px;
+                        color: $mainStyleColor1;
+
+                        &::after{
+                            content: 'x';
+                            display: inline-block;
+                            margin: {
+                                left: 5px;
+                            }
+                        }
+                    }
+                    .clear-all{
+                        color: $lightFontColor;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .result-list-wrap{
+                margin-top: 10px;
+                border: $commonBorder;
+                border-radius: 4px;
+                font-size: $normalFontSize;
+                line-height: 20px;
+                color: $darkFontColor;
+                background-color: $contentBgColor;
+                .search-sort{
+                    padding: {
+                        top: 15px;
+                        right: 20px;
+                        bottom: 2px;
+                        left: 20px;
+                    }
+                    .sort-tags{
+                        span{
+                            display: inline-block;
+                            position: relative;
+                            min-width: 96px;
+                            cursor: pointer;
+                            &.active{
+                                color: #31BCAD;
+                            }
+                            &.price-default,&.price-ascendant,&.price-descendant{
+                                &::before,&::after{
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    border: {
+                                        bottom-width: 4px;
+                                        style: solid;
+                                        top-color: transparent;
+                                        right-color: transparent;
+                                        bottom-color: #ccc;
+                                        left-color: transparent;
+
+                                    }
+
+                                };
+                                &::before{
+                                    top: 3px;
+                                    right: 30px;
+                                }
+                                &::after{
+                                    top: 13px;
+                                    right: 30px;
+                                    transform: rotate(180deg)
+                                }
+                            }
+
+                            &.price-ascendant{
+                                &::before{
+                                    border-bottom-color: #31BCAD;
+                                }
+                            }
+                            &.price-descendant{
+                                &::after{
+                                    border-bottom-color: #31BCAD;
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+                .result-list{
+                    padding: 11px 20px;
+                }
+            }
+            .pagination{
+                margin-top: 40px;
+                text-align: center;
+                .el-pagination{
+                    display: inline-block;
+                    button{
+                        margin: 0 10px;
+                        border: $commonBorder;
+                        border-radius: 50%;
+                        width: 42px;
+                        height: 42px;
+                        font-size: $normalFontSize;
+                        line-height: 42px;
+                        color: $lighterFontColor;
+                        &:disabled{
+                            color: #C0C4CC;
+                        }
+
+                    }
+                    li{
+                        @extend button;
+                        background-color: transparent;
+                        color: $lightFontColor;
+                        cursor: pointer;
+                        transition: background-color .5s;
+                        &:hover{
+                            background-color: #F5F5F5;
+                        }
+                        &.active{
+                            background-color: $mainStyleColor2;
+                            color:$whiteFontColor;
+                            &:hover{
+                                background-color: $mainStyleColor2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .aside-box{
+            width: 230px;
+            margin-left: 10px;
+
+            .map{
+                position: sticky;
+                top: 0;
+                z-index: 101;
+                margin-top: 10px;
+                border: $commonBorder;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                height: 220px;
+                width: 230px;
+                background-color:$contentBgColor;
+
+                font-size: 30px;
+                line-height: 220px;
+                text-align: center;
+                color: $lightFontColor;
+            }
+
+            .recommand-wrap{
+                box-sizing: border-box;
+                margin-top: 10px;
+                border: $commonBorder;
+                border-radius: 4px;
+                padding: 16px 20px 0;
+                width: 230px;
+                background-color: $contentBgColor;
+                .title{
+                    margin-bottom: 12px;
+                }
+                .recommand-list{
+                    .display-card-wrap{
+                        .title{
+                            display: block;
+                            height: auto;
+                            font-size: $normalFontSize;
+                            white-space: pre-wrap;
+                            text-overflow: inherit;
+                            overflow: inherit;
+                        }
+                        .bottom-info{
+                            .left{
+                                color: #F60;
+                                font-family: numbers!important;
+                                letter-spacing: -.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

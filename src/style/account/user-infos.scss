@@ -1,0 +1,170 @@
+@import '../mixin.scss';
+
+.user-info{
+    .user-card{
+        @extend .common-box;
+        padding: 0;
+        box-shadow: 0 5px 14px 0 rgba(0,0,0,.1);
+        .infos{
+            display: flex;
+            justify-content: space-between;
+            border-radius: 4px 4px 0 0;
+            width: 948px;
+            height: 209px;
+            background: {
+                color: #15B9B9;
+                image: linear-gradient(-90deg,#16ABB7 3%,#13D1BE 98%);
+            }
+            .info-box{
+                display: flex;
+                .avatar-box{
+                    margin: {
+                        top: 38px;
+                        left: 30px;
+                    }
+                    border: 10px solid #88E2D9;
+                    border-radius: 50%;
+                    width: 110px;
+                    height: 110px;
+                    .avatar-link{
+                        width: 100%;
+                        height: 100%;
+
+                        .avatar-img{
+                            border-radius: 50%;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .info-brief{
+                    margin: {
+                        top: 70px;
+                        left: 21px;
+                    }
+                    font-weight: 500;
+
+                    .setting-link{
+                        display: inline-block;
+                        margin-bottom: 5px;
+                        font-size: 26px;
+                        color:$whiteFontColor;
+                    }
+
+                    .account-value{
+                        font-size: $normalFontSize;
+                        font-weight: 400;
+                        color:$whiteFontColor;
+                        a{
+                            color:$whiteFontColor;
+                        }
+                    }
+                }
+            }
+
+            .to-setting{
+                display: inline-block;
+                margin: {
+                    top: 90px;
+                    right: 30px;
+                }
+                font-size: $normalFontSize;
+                color:$whiteFontColor;
+            }
+
+        }
+
+        .fn-box{
+            box-sizing: border-box;
+            padding: {
+                top: 36px;
+                left: 80px;
+            }
+            height: 110px;
+
+            .fn-list{
+                display: flex;
+
+                .fn-item{
+                    display: inline-block;
+                    width: 170px;
+
+                    a{
+                        font-size: $normalFontSize;
+                        color: $darkerFontColor;
+
+                        i{
+                            font-family: 'account';
+                            font-size: 32px;
+
+                            $iconColors:
+                                'orders' $mainStyleColor2 "\e627",
+                                'waitingpay' #72BAFF "\e628",
+                                'unused' #FF5E6F "\e629",
+                                'comment' #FFBD31 "\e626",
+                                'refund' #7E87FB "\e62a";
+
+                            @each $className,$color,$unicode in $iconColors{
+                                &.#{$className}{
+                                    color: $color;
+                                    &::before{
+                                        content:$unicode;
+                                    }
+                                }
+                            }
+
+                        }
+                        span{
+                            display: inline-block;
+                            margin:{
+                                left: 16px;
+                            }
+                            vertical-align: top;
+                            line-height: 36px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .like-box{
+        @extend .common-box;
+        box-sizing: content-box;
+        margin-top: 20px;
+        padding: 20px 10px;
+        width: 928px;
+
+        .like-titles{
+            margin: {
+                left: 20px;
+                bottom: 10px;
+            }
+
+            .title{
+                font-size: 20px;
+                color: $darkerFontColor;
+                font-weight: 500;
+            }
+
+            .sub-title{
+                font-size: $normalFontSize;
+                color: $lightFontColor;
+                margin-left: 10px;
+                font-weight: 400;
+            }
+        }
+        .like-item-list{
+            .bottom-info{
+                .left{
+                    font-size: 22px;
+                    font-family: numbers!important;
+                    letter-spacing: -.5px;
+                    color: #F60;
+                }
+            }
+        }
+    }
+}

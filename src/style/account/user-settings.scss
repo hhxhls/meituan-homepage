@@ -1,0 +1,276 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.user-setting {
+    @extend .common-box;
+    padding: 30px 30px 0;
+
+    .titles {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 26px;
+        color: $darkFontColor;
+
+        .sub-title {
+            margin-bottom: 20px;
+            font-size: $normalFontSize;
+            line-height: 40px;
+            color: $lightFontColor;
+        }
+    }
+
+    .setting-box {
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #{$commonBorderColor};
+            padding: 30px 0;
+
+            .left {
+                display: flex;
+                justify-content: space-between;
+
+                .title {
+                    font-size: 18px;
+                    border-right: 1px solid #{$commonBorderColor};
+                    padding-right: 30px;
+                    width: 95px;
+                    line-height: 34px;
+                    text-align: right;
+
+                }
+
+                .info {
+                    padding-left: 30px;
+                    text-align: right;
+                    height: 40px;
+
+                    .avatar {
+                        margin-top: -5px;
+                        border-radius: 50%;
+                        width: 48px;
+                        height: 48px;
+                    }
+
+                    .info-content {
+                        font-size: $miniFontSize;
+                        color: $lightFontColor;
+                        line-height: 40px;
+
+                    }
+                }
+            }
+
+            .right {
+                .common-btn {
+                    border-color: $commonBorderColor;
+                    background-color: $contentBgColor;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .dialog-mask {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .8);
+
+        .mask-content {
+            position: relative;
+            top: 18%;
+            width: 480px;
+            margin: 0 auto;
+        }
+
+        &.in-dialog {
+            display: block;
+        }
+
+        .dialog-content {
+            .dialog-line {
+                display: flex;
+                margin: 15px auto;
+
+                .dialog-lab {
+                    flex-shrink: 0;
+                    margin-right: 20px;
+                    width: 36%;
+                    font-size: $normalFontSize;
+                    line-height: 40px;
+                    text-align: right;
+                    color: $lightFontColor;
+
+                }
+
+                .dialog-value {
+                    font-size: $normalFontSize;
+                    color: $lightFontColor;
+                    line-height: 40px;
+                    font-weight: 500;
+                }
+
+                .dialog-input {
+                    border: 1px solid #{$commonBorderColor};
+                    border-radius: 2px;
+                    padding: 0 20px 0 10px;
+                    width: 148px;
+                    height: 32px;
+                    font-size: $normalFontSize;
+                    color: $darkFontColor;
+                }
+
+                .input-box {
+                    position: relative;
+
+                    .noti {
+                        display: none;
+                        position: absolute;
+                        top: 9px;
+                        left: 159px;
+                        width: 16px;
+                        height: 16px;
+                        background-size: 100% 100%;
+
+                        &.warn {
+                            display: block;
+                            background-image: url('/image/account/fail-ico.png')
+                        }
+
+                        &.ok {
+                            display: block;
+                            background-image: url('/image/account/succ-ico.png')
+                        }
+
+                    }
+                }
+
+                .username-set {
+                    width: 180px;
+                    font-size: $miniFontSize;
+                    line-height: 1.2;
+                    color: $lighterFontColor;
+
+                    .des {
+                        margin: 10px 0;
+                    }
+                }
+            }
+            .change-avatar{
+                .crop-container{
+                    display: flex;
+                    justify-content: space-between;
+
+                    .crop-board{
+                        position: relative;
+                        margin: 10px 10px 10px 25px;
+                        border: 1px solid #a3a3a3;
+                        width: 300px;
+                        height: 300px;
+
+                        .crop-content{
+                            position: absolute;
+                            top: 0;
+                            z-index: 0;
+                            .crop-box{
+                                max-width: 400px;
+                                max-height: 400px;
+                                overflow: hidden;
+
+                                .origin-img{
+                                    position: relative;
+                                    max-height: 300px;
+                                    max-width: 300px;
+
+                                    .cover{
+                                        position: absolute;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        opacity: .5;
+                                        background-color: #000;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .crop-preview{
+                        margin: 10px 25px 10px 10px;
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+            .pw-strength-container {
+                position: relative;
+                margin-top: 5px;
+                overflow: hidden;
+
+                .str-bar {
+                    width: 0;
+                    height: 20px;
+                    transition: all .4s linear;
+                    background-color: #d3ebee;
+
+                    $strengthArray:
+                        'weak' 85px #f76120,
+                        'normal' 172px #ff8900,
+                        'strong' 260px #5bab3c;
+
+                    @each $className, $width, $color in  $strengthArray{
+                        &.#{$className}{
+                            width: $width;
+                            background-color: $color;
+                        }
+                    }
+
+                }
+
+                .str-level {
+                    display: inline-block;
+                    border-right: 2px solid #fff;
+                    height: 16px;
+                    width: 58px;
+                    font-size: $miniFontSize;
+                    text-align: center;
+                    color:$whiteFontColor;
+                    background-color: #eee;
+
+                    &.weak.active {
+                        background: #FAA;
+                    }
+
+                    &.normal.active {
+                        background: #FFDAAA;
+                    }
+
+                    &.strong {
+                        border: 0;
+
+                        &.active {
+                            background: #8EE6DD;
+                        }
+
+                    }
+                }
+            }
+
+            .warn-text {
+                display: none;
+                font-size: $miniFontSize;
+                color: #F67;
+                line-height: 1.2;
+                margin: 10px 0;
+
+                &.show {
+                    display: block;
+                }
+            }
+        }
+    }
+}

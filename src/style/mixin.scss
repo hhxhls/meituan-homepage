@@ -1,0 +1,112 @@
+/* out-fit mixin */
+@import './common.scss';
+
+//背景图片设置
+@mixin bgImg($url){
+    background: {
+        image: url($url);
+        repeat: no-repeat;
+        size: 100% 100%;
+    }
+}
+
+// 常用的媒体查询
+@mixin mediaQuery($screenSize: '') {
+    @if $screenSize == ''{
+        @media screen {
+            & {
+                @content; //将整段的scss混入这个媒体查询中
+            }
+        }
+    } @else{
+        @media screen and ($screenSize) {
+                @content;
+        }
+    }
+}
+
+// 水平垂直居中
+@mixin center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+// 水平居中
+@mixin hCenter{
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+// 垂直居中
+@mixin vCenter{
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+// 字体
+@mixin font($size, $lineHigh, $family: $defaultFont) {
+    font: #{$size}/#{$lineHigh} $family
+}
+
+// 去除浮动模式
+@mixin clear-fix {
+    &::before{
+        content: '';
+        display: block
+    }
+    &::after{
+        clear: both;
+        content:'';
+        display: block;
+    }
+}
+
+// 居中内容附媒体查询模式
+@mixin content-size($normalWidth: 1190px,
+                    $mediaScreen:$screenLv1,
+                    $mediaSize: 960px){
+    margin: 0 auto;
+    width: $normalWidth;
+    @include mediaQuery($mediaScreen){
+        width: $mediaSize;
+    };
+}
+
+//　附带尖角号的下拉框模式
+
+@mixin drop-with-triangle($topBefore:-7px,
+                          $topAfter: -5px,
+                          $left:24px,
+                          $size:6px,
+                          $borderColor:$commonBorderColor,
+                          $contentColor: $contentBgColor  ){
+    &::before{
+        display: block;
+        position: absolute;
+        top: $topBefore;
+        left: $left;
+        border: {
+            top: 0;
+            right: #{$size} solid transparent;
+            left: #{$size} solid transparent;
+            bottom: #{$size} solid #{$commonBorderColor};
+        }
+        content: '';
+    }
+
+    &::after{
+        display: block;
+        position: absolute;
+        top: $topAfter;
+        left: $left;
+        border: {
+            top: 0;
+            right: #{$size} solid transparent;
+            left: #{$size} solid transparent;
+            bottom: #{$size} solid #{$contentColor};
+        }
+        content: '';
+    }
+}

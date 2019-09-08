@@ -1,0 +1,158 @@
+/* 基础变量*/
+
+//  媒体查询相关变量
+$screenLv1 : 'max-width: 1200px';
+
+// 颜色变量
+$bgColor: #F8F8F8;
+$contentBgColor: #fff;
+$commonBorderColor: #e5e5e5;
+$darkerFontColor:#222;
+$darkFontColor: #333;
+$lightFontColor: #666;
+$lighterFontColor: #999;
+$whiteFontColor: #fff;
+$mainStyleColor1: #31bbac;
+$mainStyleColor2: #13d1be;
+$mainStyleColor3: #00c9b3;
+$linkHoverColor: $mainStyleColor1;
+$priceColor1: #FF6600;
+$priceColor2: #BE9E4D;
+$ratingStarColor: #FF9900;
+$hoverColorGrey: #f6f6f6;
+$hoverColorDarkerGrey:#f4f4f4;
+
+// 字体变量
+$defaultFont: 'Microsoft YaHei';
+$miniFontSize: 12px;
+$normalFontSize: 14px;
+$largeFontSize: 16px;
+$priceFontSize: 22px;
+$priceSubFontSize: $miniFontSize;
+
+$commonBorder: 1px solid #{$commonBorderColor};
+$commonBoxShadow:  0 5px 14px 0 rgba(0,0,0,.1);
+
+// 常用字体大小
+$miniFontSize: 12px;
+$normalFontSize:14px;
+$largeFontSize: 16px;
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+
+:root{
+    -webkit-font-smoothing: antialiased;
+    font-family: "-apple-system",
+    BlinkMacSystemFont,Roboto,
+    "Helvetica Neue",
+    "MIcrosoft YaHei",
+    sans-serif!important;
+    font-size:  16px;
+    line-height: normal;
+}
+
+// 导航链接通用样式
+.link{
+    color: $lighterFontColor;
+    font-size: $miniFontSize;
+    &:hover{
+        color:$linkHoverColor;
+    }
+}
+
+// 超出文字省略样式
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 懒加载背景样式
+.lazy-load{
+    background: {
+        color: #e5e5e5;
+        image: url('/image/common/lazy-load-bg.png');
+        position: center center;
+        repeat: no-repeat;
+    }
+}
+
+// 通用内容框样式
+.common-box{
+    border: $commonBorder;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 20px;
+    background-color: $contentBgColor;
+}
+
+// 下划线链接样式
+a.with-underline{
+    color: #2bb8aa;
+    &.grey{
+        color: $lighterFontColor;
+    }
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+// 通用按钮样式
+.common-btn{
+    display: inline-block;
+    border: $commonBorder;
+    border-radius: 130px;
+    padding: 10px 25px;
+    font-size: $normalFontSize;
+    font-weight: 500;
+    color: $lightFontColor;
+    cursor: pointer;
+}
+
+// 分页器通用样式
+.common-pagination{
+    margin-top: 40px;
+    text-align: center;
+    .el-pagination{
+        display: inline-block;
+        button{
+            margin: 0 10px;
+            border: $commonBorder;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            font-size: $normalFontSize;
+            line-height: 42px;
+            color: $lighterFontColor;
+            &:disabled{
+                color: #C0C4CC;
+            }
+
+        }
+        li{
+            @extend button;
+            background-color: transparent;
+            color: $lighterFontColor;
+            cursor: pointer;
+            transition: background-color .5s;
+            &:hover{
+                background-color: #F5F5F5;
+            }
+            &.active{
+                background-color: $mainStyleColor2;
+                color:$whiteFontColor;
+                &:hover{
+                    background-color: $mainStyleColor2;
+                }
+            }
+        }
+    }
+}
+
+
+
+

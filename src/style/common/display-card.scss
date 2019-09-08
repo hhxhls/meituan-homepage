@@ -1,0 +1,140 @@
+@import '../mixin.scss';
+
+.display-card-wrap{
+    display: inline-block;
+    position: relative;
+    color: $lighterFontColor;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: $contentBgColor;
+    transition: background-color .5s;
+    text-decoration: none;
+    text-align: left;
+
+    &.with-hover:hover{
+        background-color: $hoverColorDarkerGrey;
+    }
+
+    .img-cover{
+        margin-bottom: 11px;
+        max-width: 100%;
+        cursor: pointer;
+        .title-img{
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+        }
+    }
+
+    .title{
+        @extend .ellipsis;
+
+        margin-bottom: 8px;
+        height: 22px;
+        font-size: $largeFontSize;
+        font-weight: 500;
+        line-height: 22px;
+        color: $darkerFontColor;
+        cursor: pointer;
+    }
+
+    .des{
+        .rating{
+            height: 24px;
+            line-height: 0;
+            .el-rate{
+                display: inline-block;
+                .el-rate__icon{
+                    margin-right: 0;
+                    font-size: 17px;
+                }
+            }
+
+            .comments{
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 10px;
+                font-size: $miniFontSize;
+                height: 24px;
+                line-height: 24px;
+            }
+        }
+        .sub-title{
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 7px;
+            height: 18px;
+            font-size: $miniFontSize;
+            line-height: 18px;
+            color: $lighterFontColor;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+        }
+    }
+    .tags{
+        margin-bottom: 10px;
+        height: 20px;
+        font-size: $miniFontSize;
+        overflow: hidden;
+        color: $lighterFontColor;
+        .tag-item{
+            margin-right: 10px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            border: 1px solid #d8d8d8;
+            border-radius: 2px;
+            padding: 0 3px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+        }
+    }
+    .bottom-info{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .left{
+            color: $priceColor1;
+            cursor: pointer;
+            &.gold{
+                color: $priceColor2;
+            }
+            .price-mark{
+                font-size: $normalFontSize;
+                font-weight: 500;
+                letter-spacing: -.5px;
+            }
+            .price{
+                margin-right: 6px;
+                font-size: 22px;
+                letter-spacing: -.8px;
+            }
+            .price-type{
+                font-size: $miniFontSize;
+                letter-spacing: -.6px;
+            }
+            .old-price{
+                font-size: $miniFontSize;
+                color: $lighterFontColor;
+                text-decoration: line-through;
+            }
+        }
+        .right{
+            margin-top: 10px;
+            font-size: $miniFontSize;
+            color: $lighterFontColor;
+        }
+    }
+    .head-img{
+        position: absolute;
+        top: 196px;
+        right: 20px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        z-index: 10;
+    }
+}

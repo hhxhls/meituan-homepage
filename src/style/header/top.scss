@@ -1,0 +1,169 @@
+@import "../mixin.scss";
+@import "./header.scss";
+
+
+    /* 顶部导航栏组件 */
+    .top {
+        @include content-size;
+        @include clear-fix;
+        height: 40px;
+
+        // 顶部栏左侧
+        .left-bar {
+            float: left;
+
+            .left-item {
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            // 地理信息栏
+            .geo {
+                vertical-align: top;
+                padding-top: 12px;
+
+                // 定位图标
+                .position-icon {
+                    font-family: "headicon";
+                    color : #999;
+                    &::before {
+                        content: "\e60a";
+                    }
+                }
+
+                .near-by {
+                    display: inline-block;
+
+                    .near-by-item {
+                        margin: 0 3px;
+                    }
+                }
+
+                .change-city {
+                    margin: 0 4px;
+                    color: #666;
+                }
+            }
+
+            // 用户信息栏
+            .user {
+                padding-top: 12px;
+
+                .logout,
+                .register {
+                    margin-left: 10px;
+                }
+
+                .highlight {
+                    color: $linkHoverColor;
+                    margin-left: 20px;
+                }
+
+                .highlight {
+                    color: $linkHoverColor;
+                }
+            }
+        }
+
+        // 顶部右侧栏
+        .right-bar {
+            float: right;
+
+                .head-nav {
+                    @include clear-fix;
+                    // 各导航标签
+                    .nav-branch {
+                        float: left;
+                        padding: 12px 14px;
+                        position: relative;
+                    // 各导航标签列表
+                        .branch-list {
+                            text-align: center;
+                            display: none;
+                            min-width: 100%;
+                            background-color: #fff;
+                            box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .1);
+
+                            .branch-item {
+                                line-height: 35px;
+                            }
+                        }
+                        // 商家中心
+                        .e-buz{
+                            width:140%;
+                        }
+                        // 手机APP
+                        .web-map{
+                            width: 1200px;
+                            box-sizing: border-box;
+                            padding:30px 36px 36px 47px;
+                            @include clear-fix;
+                            .cate-list{
+                                float: left;
+                                margin-right: 47px;
+
+                                dt{
+                                    color: $linkHoverColor;
+                                    margin-bottom: 26px;
+                                    font-size: $normalFontSize;
+                                }
+
+                                dd{
+                                    a{
+                                        padding: 5px 0;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                            .hotel{
+                                width: 234px;
+                                dd{
+                                    float: left;
+                                    width: 33%;
+                                }
+                            }
+                            .food{
+                                width: 156px;
+                                dd{
+                                    float: left;
+                                    width: 50%;
+                                }
+                            }
+                            .movie{
+                                width: 90px;
+                            }
+                            .app{
+                                float: right;
+                                dd{
+                                    float: left;
+                                    margin: 0 8px;
+                                }
+                                .appicon{
+                                    width: 60px;
+                                    height: 60px;
+
+                                }
+                            }
+                        }
+
+                        &:hover.with-sub {
+                            background-color: #fff;
+                            box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .1);
+
+                            .branch-list {
+                                display: block;
+                                position: absolute;
+                                z-index: 10;
+                                top: 39px;
+                                right: 0;
+                            }
+                        }
+
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+
+        }
+    }

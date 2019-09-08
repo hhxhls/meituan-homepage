@@ -1,0 +1,116 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.user-voucher{
+    padding-left: 0!important;
+    .voucher-head{
+        margin-left: 25px;
+        border-bottom: 1px solid #{$commonBorderColor};
+    }
+    .voucher-main{
+
+        padding-bottom: 25px;
+        height: 887px;
+        .voucher-item{
+            display: inline-block;
+            position: relative;
+            margin-left: 25px;
+            margin-top: 20px;
+            border: 1px solid #{$commonBorderColor};
+            border-top: 0;
+            border-radius: 4px;
+            width: 280px;
+            height: 410px;
+            vertical-align: top;
+            background: #F9F9F9;
+            &:hover{
+                box-shadow: 0 4px 14px 1px rgba(0,0,0,.1);
+            }
+
+            .card-head{
+                position: relative;
+                height: 175px;
+
+                .back-icon{
+                    position: absolute;
+                    top: -7px;
+                    left: 0;
+                    z-index: 0;
+                    height: 161px;
+                    font-size: 161px;
+                    color: rgb(195, 195, 195);
+                    font-family: 'account-col';
+                    background:{
+                        color:$whiteFontColor;
+                    }
+                    &::before{
+
+                        content: "\e62b";
+                    }
+                }
+
+                .price{
+                    position: relative;
+                    top: 30px;
+                    padding-right: 24px;
+                    font-size: 60px;
+                    color:$whiteFontColor;
+                    text-align: center;
+
+                    .mark{
+                        position: relative;
+                        top: -25px;
+                        font-size: 24px;
+                        letter-spacing: -.87px;
+                    }
+                }
+
+                .more-info{
+                    position: relative;
+                    top: 30px;
+                    font-size: $normalFontSize;
+                    letter-spacing: 0;
+                    text-align: center;
+                    color: rgba(0,0,0,.5);
+                    .type{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            .card-body{
+
+                margin-top: 10px;
+                padding: 0 20px;
+
+                .title{
+                    margin-bottom: 10px;
+                    font-size: $largeFontSize;
+                    font-weight: 700;
+                    color: $darkerFontColor;
+                }
+
+                .des{
+                    vertical-align: top;
+                    font-size: $normalFontSize;
+                    color: $lightFontColor;
+                }
+
+                .expire{
+                    position: absolute;
+                    right: 15px;
+                    bottom: 15px;
+                    font-family: 'account-col';
+                    font-size: 50px;
+                    color: #D8D8D8;
+                    &::before{
+                        content: "\e62c";
+                    }
+                }
+            }
+        }
+        .no-item{
+            border: none;
+        }
+    }
+}

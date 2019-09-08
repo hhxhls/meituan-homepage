@@ -1,0 +1,74 @@
+@import '../mixin.scss';
+@import '../common.scss';
+
+.movie-poster{
+        display: inline-block;
+        position: relative;
+        margin-right: 19px;
+        height: 297px;
+        width: 214px;
+        .poster-img{
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+        }
+        .movie-mark{
+            position: absolute;
+            top: 10px;
+            left: -6px;
+            z-index: 11;
+            height: 20px;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+        }
+        .movie-info{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            border: {
+                bottom-left-radius:4px;
+                bottom-right-radius:4px;
+            }
+            background-image: linear-gradient(-180deg,rgba(0,0,0,0) 0,rgba(29,45,55,.8) 99%);
+
+            .info-top{
+                margin-top: 48px;
+                padding-left: 10px;
+                font-size: $miniFontSize;
+                font-weight: 500;
+                color:$whiteFontColor;
+
+                span{
+                    font-size: $largeFontSize;
+                    font-weight: 500;
+                    color: #fd9827;
+                }
+            }
+            .info-bottom{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                .movie-name{
+                    @extend .ellipsis;
+
+                    display: inline-block;
+                    width: 60%;
+                    padding-left: 10px;
+                    font-size: $largeFontSize;
+                    color:$whiteFontColor;
+                }
+                .movie-booking{
+                    position: relative;
+                    margin-right: 10px;
+                    border-radius: 100px;
+                    padding: 2px 12px 3px;
+                    font-size: $normalFontSize;
+                    line-height: 20px;
+                    text-align: center;
+                    color:$whiteFontColor;
+                    background-color: #ff4949;
+                    cursor: pointer;
+                }
+            }
+        }
+}

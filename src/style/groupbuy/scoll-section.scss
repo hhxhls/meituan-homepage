@@ -1,0 +1,19 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.scroll_section{
+    .scroll_title{
+        margin: {
+            top: 40px;
+            bottom: 8px;
+        };
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 28px;
+        color: $darkerFontColor;
+    }
+
+    .cotent-wrap{
+        width: 950px;
+    }
+}

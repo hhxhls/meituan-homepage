@@ -1,0 +1,87 @@
+@import '../mixin.scss';
+
+.user-favor{
+    padding-bottom: 0;
+    .favor-main{
+        .favor-item{
+            .favor-content{
+                display: flex;
+                padding: 20px 0;
+
+                .img-box{
+                    @extend .lazy-load;
+                    width: 160px;
+                    height: 90px;
+                    .order-image{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .favor-info{
+                    width: 530px;
+                    padding: 13px 20px;
+                    position: relative;
+                    .info-content{
+                        .title{
+                            a{
+                                font-size: $largeFontSize;
+                                color: $darkerFontColor;
+                            }
+                        }
+                        .more-infos{
+                            .rating{
+                                height: 24px;
+                                line-height: 0;
+                                display: inline-block;
+                                    .el-rate__icon{
+                                        margin-right: 0;
+                                        font-size: 17px;
+                                    }
+                            }
+
+                            .infos{
+                                font-size: $miniFontSize;
+                                color:$lightFontColor;
+                                margin-left: 15px;
+                                height: 18px;
+                            }
+                        }
+                        .location{
+                            font-size: $miniFontSize;
+                            color:$lightFontColor;
+                        }
+                    }
+
+                }
+
+                .btn-box{
+                    margin-left: 15px;
+                    .to-favor{
+                        @extend .common-btn;
+                        position: relative;
+                        top: 25px;
+                    }
+                    .del{
+                        display: inline-block;
+                        position: relative;
+                        top: 32px;
+                        margin-left: 21px;
+                        width: 24px;
+                        height: 24px;
+                        font-family: 'account-col';
+                        font-size: 24px;
+                        vertical-align: top;
+                        color: #ccc;
+                        cursor: pointer;
+
+                        &::before{
+                            content: "\e62a";
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

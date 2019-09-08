@@ -1,0 +1,10 @@
+@import "../mixin.scss";
+.header {
+    font-size: $miniFontSize;
+    a {
+        color: $lighterFontColor;
+        &:hover {
+            color: $lightFontColor;
+        }
+    }
+}

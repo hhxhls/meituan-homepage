@@ -1,0 +1,80 @@
+@import '../mixin.scss';
+@import '../common.scss';
+
+.select-wrap{
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 10px 0 10px 10px;
+    width: 150px;
+    height: 40px;
+    font-size: $normalFontSize;
+    vertical-align: middle;
+    color: #666;
+    cursor: pointer;
+
+    &.disable{
+        cursor: not-allowed;
+    }
+    .select-arrow{
+        position: absolute;
+        top: 19px;
+        right: 6px;
+        border: {
+            style: solid;
+            width: 4px;
+            color: #666 transparent transparent transparent;
+        }
+    }
+
+    .select-list{
+        @include drop-with-triangle;
+
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        box-sizing: border-box;
+        border: 1px solid #e5e5e5;
+        padding: 20px 0 20px 15px;
+        min-width: 150px;
+        height: 375px;
+        background-color: #fff;
+
+        &.on-drop{
+            display: block;
+        }
+        dt{
+            font-size: $largeFontSize;
+            color: #ccc;
+        }
+
+        .tag-list{
+            display: flex;
+            // flex-direction: column;
+            writing-mode:vertical-lr;
+            flex-wrap: wrap;
+            max-height: 318px;
+            dd{
+                @extend .link;
+                display: inline-block;
+                writing-mode:horizontal-tb;
+                box-sizing: border-box;
+                margin: 6px 38px 0px 0;
+                padding: 1px 8px;
+                min-width: 40px;
+                height: 20px;
+                color: #666;
+                cursor: pointer;
+            }
+
+            dd.selected{
+                border-radius: 10px;
+                color:$whiteFontColor;
+                background-color: $mainStyleColor2;
+            }
+        }
+    }
+}

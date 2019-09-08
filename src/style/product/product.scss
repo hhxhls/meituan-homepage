@@ -1,0 +1,532 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.product{
+    box-sizing: border-box;
+    width: 1190px;
+    margin: 15px auto 20px;
+    .title{
+        margin-bottom: 8px;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 26px;
+    }
+    .crumb{
+        margin: {
+            top: 10px;
+            bottom: 20px;
+        };
+    }
+    .product-info{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+        color: $darkerFontColor;
+        .main-info{
+            width: 950px;
+
+
+            .discounts{
+                margin-bottom: 40px;
+                .logged{
+                    .sub-title{
+                        font-weight: bold;
+                        font-size: $largeFontSize;
+                        line-height: 26px;
+                    }
+                    .buy-now{
+                        margin-top: 30px;
+                        border-radius: 100px;
+                        width: 120px;
+                        height: 40px;
+                        font-size: $normalFontSize;
+                        line-height: 40px;
+                        text-align: center;
+                        color:$whiteFontColor;
+                        background-color: #f90;
+                        cursor: pointer;
+                    }
+                    .groupbuy-list{
+                        margin-bottom: 10px;
+                        border: $commonBorder;
+                        border-radius: 4px;
+                        padding: 16px 20px 20px;
+                        background-color: $contentBgColor;
+
+                        .detail-wrap{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 17px;
+                            padding-bottom: 20px;
+                            &:not(:last-of-type){
+                                border-bottom: $contentBgColor;
+                            }
+                            .gb-detail{
+                                display: flex;
+                                cursor: pointer;
+                                .img-box{
+                                    @extend  .lazy-load;
+                                    width: 100px;
+                                    height: 100px;
+                                    margin-right: 20px;
+                                    border-radius: 4px;
+                                    background: {
+                                        size: 60% auto;
+                                        color: #e0e0e0;
+                                    }
+                                    .gb-img{
+                                        border-radius: 4px;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+
+                                }
+                                .detail-info{
+                                    .gb-title{
+                                        font-size: $largeFontSize;
+                                        line-height: 22px;
+                                    }
+
+                                    .gb-icon{
+                                        display: inline-block;
+                                        margin: {
+                                            left: 12px;
+                                            bottom: 4px;
+                                        }
+                                        border-radius: 4px;
+                                        height: 16px;
+                                        width: 16px;
+                                        vertical-align: middle;
+                                        background: {
+                                            image: url('/image/icons/gb-icon.png');
+                                            position: center center;
+                                            size: 100%;
+                                        }
+                                    }
+                                    .sold{
+                                        margin: {
+                                            top: 1px;
+                                            bottom: 22px;
+                                        }
+                                        font-size: $miniFontSize;
+                                        line-height: 17px;
+                                        color: $lightFontColor;
+                                    }
+                                    .price-info{
+                                        .current{
+                                            color: #f60;
+                                            font-size: 30px;
+                                            .mark{
+                                                font-size: 13px;
+                                                font-weight: 700;
+                                            }
+                                        }
+                                        .shop{
+                                            margin-left: 10px;
+                                            color: $lighterFontColor;
+                                            font-size: $miniFontSize;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .voucher-list{
+                        border: $commonBorder;
+                        border-radius: 4px;
+                        padding: 16px 20px 20px;
+                        background-color: $contentBgColor;
+                        .detail-wrap{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 17px;
+                            padding-bottom: 20px;
+                            .vt-detail{
+                                display: flex;
+                                .vt-img{
+                                    margin-right: 20px;
+                                    padding: 11px 10px 0;
+                                    width: 140px;
+                                    height: 89px;
+                                    background: {
+                                        image:url('/image/product/voucher.png');
+                                        size: 100%;
+                                    }
+                                    text-align: center;
+
+                                    .vt-price{
+                                        margin-bottom: 9px;
+                                        border-bottom: $commonBorder;
+                                        padding-bottom: 8px;
+                                        font-size: 30px;
+                                        line-height: 36px;
+                                        color: #f60;
+                                        .mark{
+                                            font-size: $normalFontSize;
+                                        }
+                                    }
+                                }
+                                .detail-info{
+                                    .detail-title{
+                                        font-size: $largeFontSize;
+                                        line-height: 22px;
+                                    }
+                                    .sold{
+                                        font-size: $miniFontSize;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .gb-detail-window{
+                        display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        z-index: 1002;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,.3);
+
+                        &.open{
+                            display: block;
+                        }
+
+                        .content-wrap{
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            margin: 86px auto 10px;
+                            overflow: hidden;
+                        }
+
+                    }
+                }
+                .no-log{
+                    @extend .common-box;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .no-log-img{
+                        display: inline-block;
+                        width: 160px;
+                        height: 120px;
+                    }
+
+                    p{
+                        display: block;
+                        margin: 10px 0 14px;
+                        font-size: $largeFontSize;
+                        line-height: 26px;
+                        color: $lightFontColor;
+                    }
+                    .login{
+                        @extend .common-btn;
+                        padding: 0;
+                        width: 120px;
+                        height: 40px;
+                        font-size: 14px;
+                        line-height: 40px;
+                        text-align: center;
+                        color: $whiteFontColor;
+                        background-color: $mainStyleColor2;
+
+                    }
+                }
+
+            }
+
+            .recommend-dish{
+                margin-bottom: 40px;
+                .recommend-detail{
+                    border: $commonBorder;
+                    padding: 33px 32px 26px;
+                    background-color:$whiteFontColor;
+                    .dish-img-list{
+                        width: 910px;
+                        .dish-img-item{
+                            position: relative;
+                            display: inline-block;
+                            margin-right: 20px;
+                            border-radius: 4px;
+                            width: 130px;
+                            line-height: 0;
+                            .dish-img{
+                                border-radius: 4px;
+                            }
+                            .dish-des{
+                                position: absolute;
+                                bottom: 0;
+                                padding: 8px 0;
+                                width: 100%;
+                                font-size: $normalFontSize;
+                                line-height: normal;
+                                text-align: center;
+                                color: $whiteFontColor;
+                                background-color: rgba(0,0,0,.3);
+                            }
+                        }
+                    }
+                    .other-dish{
+                        padding: {
+                            top: 25px;
+                            left: 6px;
+                        }
+
+                        li{
+                            display: inline-block;
+                            margin: {
+                                right: 20px;
+                                bottom: 19px
+                            }
+                            font-size: $largeFontSize;
+                            line-height: 20px;
+                            color: $darkFontColor;
+                        }
+                    }
+                }
+            }
+
+            .comments{
+                margin-bottom: 40px;
+
+                .comment-title{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 20px;
+                    line-height: 26px;
+
+                    .sort{
+                        font-size: $miniFontSize;
+                        color: #666;
+                        a{
+                            margin-left: 20px;
+                        }
+                        a.active{
+                            color: $mainStyleColor3;
+                        }
+                    }
+
+                }
+
+                .comment-container{
+                    margin-top: 8px;
+                    border: $commonBorder;
+                    border-radius: 4px;
+                    padding:15px 20px 40px;
+                    color: $lightFontColor;
+                    background-color: $contentBgColor;
+
+                    .tag-list{
+                        .tag{
+                            display: inline-block;
+                            margin: {
+                                right: 10px;
+                                bottom: 10px;
+                            }
+                            padding: 0 10px;
+                            border:  $commonBorder;
+                            border-radius: 2px;
+                            line-height: 34px;
+                            cursor: pointer;
+                            &.choose{
+                                border: 1px solid #{$mainStyleColor3};
+                                background-color: #{$mainStyleColor3};
+                                color: $whiteFontColor;
+                            }
+                        }
+                    }
+
+                    .img-only{
+                        display: inline-block;
+                        line-height: 20px;
+                        margin-top: 22px;
+                        font-size: $normalFontSize;
+                        cursor: pointer;
+                        .tick{
+                            display: inline-block;
+                            vertical-align: text-bottom;
+                            border: 1px solid #ccc;
+                            border-radius: 2px;
+                            width: 15px;
+                            height: 15px;
+
+                            &.ticked{
+                                border-color: $mainStyleColor3;
+                                background: {
+                                    image: url('/image/icons/tick.png');
+                                }
+                            }
+                        }
+                    }
+
+                    .common-list{
+
+                        .comment-item{
+                            display: flex;
+                            padding-top: 30px;
+
+                            .avatar-box{
+                                border-radius: 50%;
+                                width: 60px;
+                                height: 60px;
+                                flex-shrink: 0;
+                                background: {
+                                    image: url('/image/common/lazy-load-bg.png');
+                                    size: 60% auto;
+                                    position: center center;
+                                    repeat: no-repeat;
+                                    color: $commonBorderColor;
+                                }
+
+                                .avatar{
+                                    border-radius: 50%;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            .comment-box{
+                                padding-left: 20px;
+                                width: 828px;
+
+                                .user-name{
+                                    margin-bottom: 4px;
+                                    font-size: $largeFontSize;
+                                    color: $darkerFontColor;
+                                    line-height: 22px;
+                                }
+                                .rate-with-date{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin-bottom: 8px;
+                                    height: 16px;
+                                    font-size: $miniFontSize;
+                                    line-height: 14px;
+                                    color: $lighterFontColor;
+                                    .rate{
+                                        .el-rate__icon{
+                                            margin: 0;
+                                            font-size: 17px;
+                                        }
+                                    }
+                                }
+                                .comment-detail{
+                                    font-size: $normalFontSize;
+                                    line-height: 20px;
+                                    padding-top: 13px;
+                                }
+                                .merchant-reply{
+                                    @extend .comment-detail;
+                                    color: $mainStyleColor3;
+                                }
+
+                                .image-box{
+                                    width: 828px;
+                                    height: 160px;
+                                    overflow: hidden;
+
+                                    .commnet-image{
+                                        margin-right: 0;
+                                        box-sizing: border-box;
+                                        border: 10px solid #fff;
+                                        width: 160px;
+                                        height: 160px;
+                                    }
+                                }
+
+                                .like-bar{
+                                    margin: {
+                                        top: 17px;
+                                        bottom: 16px;
+                                    }
+                                    &.liked{
+                                        .like-icon{
+                                            background-image: url('/image/icons/liked.png')
+                                        }
+                                       color: $mainStyleColor3;
+                                    }
+                                    .like-icon{
+                                        display: inline-block;
+                                        margin-right: 6px;
+                                        width: 15px;
+                                        height: 16px;
+                                        vertical-align:bottom;
+                                        background : {
+                                            image: url('/image/icons/like.png');
+                                            size: 100% 100%;
+                                        }
+                                    }
+                                    font-size: $miniFontSize;
+                                    line-height: 15px;
+                                    text-align: right;
+                                    color: #666;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .recommends{
+            .recommend-wrap{
+                box-sizing: border-box;
+                margin-top: 34px;
+                border: $commonBorder;
+                border-radius: 4px;
+                padding: 16px 20px 0;
+                width: 230px;
+                background-color: $whiteFontColor;
+                .title{
+                    margin-bottom: 12px;
+                }
+                .recommend-list{
+                    .display-card-wrap{
+                        .title{
+                            display: block;
+                            height: auto;
+                            font-size: $normalFontSize;
+                            white-space: pre-wrap;
+                            text-overflow: inherit;
+                            overflow: inherit;
+                        }
+                        .bottom-info{
+                            .left{
+                                font-size: 22px;
+                                color: #f60;
+                                line-height: 27px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nearby-shops{
+
+        .nearby-wrap{
+            box-sizing: border-box;
+            margin-top: 8px;
+            border: $commonBorder;
+            border-radius: 4px;
+            padding: 20px 20px 0;
+            overflow: hidden;
+            color: $lighterFontColor;
+            background-color: $whiteFontColor;
+
+            h4{
+                font-size: $largeFontSize!important;
+                font-weight: 400!important;
+            }
+
+            .left{
+                color: #F60!important;
+            }
+        }
+    }
+}

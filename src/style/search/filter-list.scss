@@ -1,0 +1,144 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.filter-wrap{
+    display: flex;
+    padding: {
+        top: 15px;
+        left: 20px;
+        right: 20px;
+    }
+    font-size: $normalFontSize;
+
+    // 激活的tag样式
+    .active-tag{
+        border-radius: 100px;
+        padding: 0 10px;
+        background-color: $mainStyleColor2;
+        color:#fff;
+        cursor: pointer;
+
+    }
+
+    .title{
+        flex-shrink: 0;
+        display: flex;
+        box-sizing: border-box;
+        padding-top: 5px;
+        width: 160px;
+        span{
+            height: 22px;
+            line-height: 22px;
+        }
+        .title-text{
+            width: 80px;
+        }
+
+        .title-tag{
+            cursor: pointer;
+        }
+    }
+    .list-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: $commonBorder;
+        padding-bottom: 10px;
+
+        .list-content{
+            &:hover .detail-container{
+                display: block;
+            }
+
+            position: relative;
+            cursor: pointer;
+            .with-detail{
+                .tag-link{
+                    &::after{
+                        display:inline-block;
+                        content: '';
+                        margin-left: 5px;
+                        border: {
+                            top-color: #666;
+                            right-color: transparent;
+                            bottom-color: transparent;
+                            left-color: transparent;
+                            style: solid;
+                            width: 4px;
+                        }
+                    }
+
+
+                }
+
+            }
+            .list-tag{
+                display: inline-block;
+                position: relative;
+                box-sizing: border-box;
+                min-width: 120px;
+                line-height: 28px;
+
+                .active-tag{
+                    margin-left: -10px;
+                    &::after{
+                        border: {
+                            top-color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .detail-container{
+                display: none;
+                position: absolute;
+                border: $commonBorder;
+                width: 510px;
+                top: 28px;
+                left: 0;
+                z-index: 102;
+
+                &.one-child{
+                    width: 150px;
+                }
+
+                &.two-children{
+                    width: 270px;
+                }
+
+                &.three-children{
+                    width: 390px;
+                }
+
+                padding: {
+                    top: 19px;
+                    right: 15px;
+                    bottom: 9px;
+                    left: 15px;
+                }
+                background-color: $contentBgColor;
+
+                .detail-title{
+                    display: inline-block;
+                    margin-bottom: 12px;
+                    font-size: $largeFontSize;
+                    color: #ccc;
+                }
+                .list-detail{
+                    // width: 100%;
+                    div{
+                        display: inline-block;
+                        box-sizing: border-box;
+                        margin-bottom: 5px;
+                        margin-left: -5px;
+                        padding: 0 10px;
+                        min-width: 120px;
+                        font-size: $miniFontSize;
+                        line-height: 1.5;
+                    }
+                }
+            }
+
+
+        }
+    }
+}

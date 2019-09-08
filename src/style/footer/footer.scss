@@ -1,0 +1,101 @@
+@import '../mixin.scss';
+@import '../common.scss';
+$titleFontSize:14px;
+$itemFontSize : 12px;
+$infoFontColor: #666;
+$licenseFontColor: $lighterFontColor;
+$borderColor : #e5e5e5;
+
+.footer-wrap{
+    margin-top: 40px;
+    font-size: $itemFontSize;
+
+    a{
+        @extend .link;
+        color: $infoFontColor;
+    }
+
+    .footer-content{
+        @include  content-size;
+        box-sizing: border-box;
+        .info-list{
+            display: flex;
+            padding: 40px 45px;
+            color: $infoFontColor;
+            line-height: 2;
+            border: {
+                top: 1px solid #{$borderColor};
+                bottom: 1px solid #{$borderColor};
+            }
+
+            .info-col{
+                width: 20%;
+                .cate-list{
+                    padding-bottom: 20px;
+
+                    dt{
+                        font-size: $normalFontSize;
+                    }
+                }
+            }
+
+        }
+
+        .license{
+            display: flex;
+            justify-content: space-between;
+            padding: {
+                left: 20px;
+                top: 15px;
+                bottom: 30px;
+            }
+            .license-link{
+
+                line-height: 1.6;
+                a{
+                    @extend .link
+                }
+                span{
+                    color: #999
+                }
+            }
+
+            .license-shotcut{
+
+                .text{
+                    padding-bottom: 6px;
+                    text-align: right;
+                    font-size: $largeFontSize;
+                    a{
+                        @extend .link;
+                    }
+                }
+                .license-show{
+                    display: inline-block;
+                    margin-right: 2px;
+                    height: 38px;
+                    overflow: hidden;
+                    text-indent: -1000px;
+                    background-image: url(/image/site-footer/footer.png);
+                    background-repeat: no-repeat;
+
+                }
+
+                .registration{
+                    width: 109px;
+                    background-position: 0 -167px;
+                }
+                .trust-worthy{
+                    width: 107px;
+                    background-position: 0 -127px;
+                }
+                .customer{
+                    width: 107px;
+                    background-position: 0 -40px;
+                }
+            }
+
+        }
+    }
+
+}

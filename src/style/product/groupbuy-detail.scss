@@ -1,0 +1,243 @@
+@import '../common.scss';
+@import '../mixin.scss';
+
+.groupbuy-detail{
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    padding: 0 80px;
+    width: 710px;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: $contentBgColor;
+    .sub-section{
+        padding-top: 40px;
+    }
+
+    .des{
+        margin-bottom: 6px;
+        font-size: $largeFontSize;
+        font-weight: 700;
+        line-height: 26px;
+    }
+
+    .buy-now{
+        margin-top: 30px;
+        border-radius: 100px;
+        width: 120px;
+        height: 40px;
+        font-size: $normalFontSize;
+        line-height: 40px;
+        text-align: center;
+        color:$whiteFontColor;
+        background-color: #f90;
+        cursor: pointer;
+    }
+
+    .check-detail{
+        @extend .buy-now ;
+        margin-left: 20px;
+        border: $commonBorder;
+        color: $lightFontColor;
+        background-color: $contentBgColor;
+    }
+
+
+    .head{
+        display: flex;
+        padding-top: 71px;
+
+        .gb-img{
+            border-radius: 4px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .gb-summary{
+            padding-left: 40px;
+            .summary-title{
+                margin-bottom: 8px;
+                font-size: 26px;
+                line-height: 37px;
+                color: $darkerFontColor;
+            }
+
+            .prices{
+                .current-price{
+                    line-height: 29px;
+                    color: $mainStyleColor1;
+                    .mark{
+                        font-weight: 400;
+                        font-size: $normalFontSize;
+                    }
+                    .number{
+                        font-size: 24px;
+                    }
+                }
+                .shop-price{
+                    margin-left: 10px;
+                    font-size: $miniFontSize;
+                    color: $lightFontColor;
+                }
+            }
+            .btn-bar{
+                display: flex;
+            }
+        }
+    }
+
+    .order-detail{
+        color: $lightFontColor;
+
+        .order-table{
+            border: $commonBorder;
+            border-radius: 4px;
+            padding: 0 20px;
+            background-color: $contentBgColor;
+
+            .table-title{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: $commonBorder;
+                height: 48px;
+                font-size: $normalFontSize;
+                line-height: 48px;
+
+                .right{
+                    span{
+                        display: inline-block;
+                        width: 110px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .sub-menu{
+                display: flex;
+
+                dt{
+                    width: 154px;
+                    line-height: 45px;
+                    font-size: $normalFontSize;
+                    color: $darkerFontColor;
+                }
+
+                dl{
+                    font-size: 0;
+                    dd{
+                        display: flex;
+                        span{
+                            display: inline-block;
+                            font-size: $normalFontSize;
+                            line-height: 45px;
+                             color: $darkerFontColor;
+                        }
+                        .dish-name{
+                            width: 173px;
+                        }
+
+                        .price-detail{
+                            span{
+                                width: 110px;
+                                text-align: center;
+
+                                &.unit-count{
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .total-count{
+                border-top: $commonBorder;
+                font-size: $normalFontSize;
+                line-height: 49px;
+                text-align: right;
+                b{
+                    color: #f40;
+                }
+                & > span{
+                    display: inline-block;
+                    margin-left: 53px;
+                    color: $lightFontColor;
+                }
+            }
+        }
+    }
+
+    .buy-noti{
+        .des-text{
+            width: 552px;
+            font-size: $miniFontSize;
+            line-height: 20px;
+            color: $lightFontColor;
+        }
+        .noti-content{
+            border: $commonBorder;
+            border-radius: 4px;
+            padding: 0 20px 20px;
+            font-size: $normalFontSize;
+            color: $darkerFontColor;
+            background-color: $contentBgColor;
+
+            .sub{
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .photo{
+        .img-list{
+            width: 710px;
+            .img-wrap{
+                @extend .lazy-load;
+                display: inline-block;
+                margin-right: 10px;
+                border-radius: 4px;
+                width: 220px;
+                height: 129px;
+
+                .actual-img{
+                    border-radius: 4px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .check-gb-detail{
+        display: flex;
+        margin-bottom: 38px;
+        justify-content: center;
+        .check-detail{
+          display: inline-block;
+          padding: {
+              right: 25px;
+              left: 15px;
+          }
+          width: auto;
+        }
+    }
+
+    .closed{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+        font-family: 'product';
+        color: #e5e5e5;
+        text-align: center;
+        background-color: #696969;
+        cursor: pointer;
+        &::before{
+            content: "\e60b";
+        }
+    }
+}
