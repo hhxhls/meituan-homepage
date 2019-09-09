@@ -12,12 +12,12 @@
                      <span class="shop-price">门店价￥{{shopPrice}}</span>
                  </div>
                  <div class="btn-bar">
-                     <div class="buy-now">
+                     <a class="buy-now">
                          立即抢购
-                     </div>
-                     <div class="check-detail">
+                     </a>
+                     <router-link class="check-detail" :to="{name:'groupbuy',params:{id:gid}}">
                          查看详情
-                     </div>
+                     </router-link>
                  </div>
              </div>
         </div>
@@ -101,6 +101,10 @@
 <script>
 export default {
   props: {
+    gid: { // 团购id
+      type: Number,
+      required: true,
+    },
     title: { // 团购标题
       type: String,
       required: true,

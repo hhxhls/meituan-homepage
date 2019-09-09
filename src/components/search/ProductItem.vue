@@ -34,7 +34,7 @@
                     <li class="dicount-item"
                         v-for="(item,index) in deals"
                         :key="index">
-                        <a class="deal-link" :href="`/product/d${item.id}`"
+                        <a class="deal-link" :href="`/groupbuy/d${item.id}`"
                            v-show="dealDroped || index < 2">
                             <p class="title">{{item.title}}</p>
                             <p class="deal-info">
