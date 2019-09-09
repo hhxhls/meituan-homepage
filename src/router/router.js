@@ -49,7 +49,7 @@ export default [
         component: Product,
       },
       {
-        path: '/groupbuy', // 团购详情页
+        path: '/groupbuy/:id', // 团购详情页
         name: 'groupbuy',
         component: Groupbuy,
       },
