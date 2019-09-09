@@ -82,7 +82,6 @@ const store = new Vuex.Store({
 
     // 更新历史切换城市记录
     updateHistoryCity(state, keyword) {
-      console.log(keyword);
       const currentHistory = Array.from(getDataStorage('historyCity'));
       if (!currentHistory.includes(keyword)) {
         if (currentHistory.length >= 10) {

@@ -25,7 +25,6 @@ const mutations = {
   },
   // 设置按字母排序的城市列表
   changeCityAlphabet(scopeState, alphabet) {
-    console.log(alphabet);
     const target = scopeState;
     target.cityAlphabet = alphabet;
   },
@@ -64,9 +63,7 @@ const actions = {
   },
   // 请求城市搜索框的提示信息
   async dispatchCitySuggestion({ commit }, params) {
-    console.log(params);
     const res = await getCitySuggestion(params);
-    console.log(res);
     commit('changeCitySuggestion', res.data.data);
   },
 };

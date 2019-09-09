@@ -26,7 +26,6 @@ const actions = {
   // 请求团购套餐详细信息
   async dispatchGroupbuyInfo({ commit }) {
     const res = await getGroupbuyInfo();
-    console.log(res);
     commit('changeGroupbuyInfo', res.data.data);
   },
   // 请求团购套餐详评论信息

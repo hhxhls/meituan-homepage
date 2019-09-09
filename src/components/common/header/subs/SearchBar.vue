@@ -105,7 +105,6 @@ export default {
       window.clearTimeout(this.timer);
       this.timer = window.setTimeout(() => {
         getSearchRecommend({ key: this.searchWord }).then((res) => {
-          console.log(res.data.data);
           this.searchList = res.data.data;
         });
       }, 200);

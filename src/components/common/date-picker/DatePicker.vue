@@ -69,7 +69,6 @@ export default {
       this.year = Number(dateArr[0]);
       this.month = Number(dateArr[1]);
       this.day = Number(dateArr[2]);
-      console.log(this.day);
     },
 
     dateToString() { // 将年月日拼接成日期字符串
